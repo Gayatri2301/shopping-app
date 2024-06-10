@@ -4,7 +4,7 @@ const app = () => {
   return (
     <div>
       <h1>Shopping App</h1>
-      <p>Hello!people..</p>
+      <p>Hello!</p>
     </div>
   )
 }
