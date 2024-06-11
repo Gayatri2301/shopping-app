@@ -3,19 +3,19 @@ const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const nm = require('nodemailer');
-const mongoose = require("mongoose");
-const Users = require('./model')
+//const mongoose = require("mongoose");
+//const Users = require('./model')
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-mongoose.connect('mongodb+srv://oneshop982:oneshop982@cluster0.0pezb70.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',
+//mongoose.connect('mongodb+srv://oneshop982:oneshop982@cluster0.0pezb70.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',
     
-).then(
-    ()=>{
-        console.log("conncted")
-    }
-)
+//).then(
+//    ()=>{
+//        console.log("conncted")
+//    }
+//)
 let savedOtps = {};
 
 app.listen(4000, () => {
