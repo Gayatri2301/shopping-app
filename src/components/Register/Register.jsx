@@ -5,9 +5,11 @@ import './register.css';
 const Register = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [loading,setLoading] = useState(false);
     const nav = useNavigate();
 
     const sendOtp = () => {
+        setLoading(true);
         const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         if (regex.test(email)) {
             fetch("http://localhost:4000/sendOtp", {
@@ -28,7 +30,11 @@ const Register = () => {
             alert("Enter a valid email");
         }
     };
-
+    if(loading){
+        return(
+            <h1>Loading</h1>
+        )
+    }else{
     return (
         <div className="min-h-screen py-20 bg-[#106F97] ">
             <div className="container mx-auto ">
@@ -80,7 +86,7 @@ const Register = () => {
             </div>
             </div>
         </div>
-    );
+    );}
 };
 
 export default Register;

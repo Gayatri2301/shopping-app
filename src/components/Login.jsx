@@ -18,9 +18,9 @@ const Login = () => {
   <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0"/>
 </svg>
               </div>
-              <button className='bg-[#106F97] rounded-xl text-white py-2 hover:scale-105 duration-300'>Login</button>
+              <button className='bg-[#106F97] rounded-xl text-white py-2 hover:scale-105 duration-300 Content-center'>Login</button>
             </form>
-            <p className='mt-5 text-xs border-b border-gray-400 py-4'>Forgot password?</p>
+            <p className='mt-5 text-xs border-b border-gray-400 py-4'>Forgot your password?</p>
             <div className='mt-3 text-sm flex justify-between items-center'>
               <p>don't have an account</p>
               <button className='py-2 px-5 bg-[#106F97] text-white
