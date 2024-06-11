@@ -1,0 +1,73 @@
+const express = require('express');
+const app = express();
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const nm = require('nodemailer');
+const mongoose = require("mongoose");
+const Users = require('./model')
+
+app.use(cors());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+mongoose.connect('mongodb+srv://oneshop982:oneshop982@cluster0.0pezb70.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',
+    
+).then(
+    ()=>{
+        console.log("conncted")
+    }
+)
+let savedOtps = {};
+
+app.listen(4000, () => {
+    console.log("server listening at port 4000");
+});
+
+const transporter = nm.createTransport({
+    host: 'smtp.gmail.com',
+    port: 587,
+    secure: false,
+    auth: {
+        user: "oneshop982@gmail.com",  
+        pass: "rnxy lzbs wjmb iegx"
+    }
+});
+
+app.post('/sendOtp', (req, res) => {
+    let email = req.body.email;
+    let digits = '0123456789';
+    let limit = 4;
+    let otp = "";
+    for (let i = 0; i < limit; i++) {
+        otp += digits[Math.floor(Math.random() * 10)];
+    }
+
+    let options = {
+        from: "oneshop982@gmail.com",
+        to: email,
+        subject: "Verification OTP",
+        text: "OTP for the application is " + otp,
+    };
+
+    transporter.sendMail(options, (err, info) => {
+        if (err) {
+            res.status(500).send("Couldn't send OTP");
+        } else {
+            savedOtps[email] = otp;
+            setTimeout(() => {
+                delete savedOtps[email];  
+            }, 50000);
+            res.send('OTP sent');
+        }
+    });
+});
+
+app.post('/verify',(req, res) => {
+    let otpReceived = req.body.otp;
+    let email = req.body.email;
+    console.log(savedOtps);
+    if (savedOtps[email] === otpReceived) {
+        res.send("Verified");
+    } else {
+        res.status(500).send('Invalid OTP');
+    }
+});
