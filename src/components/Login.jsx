@@ -20,7 +20,7 @@ const Login = () => {
               </div>
               <button className='bg-[#106F97] rounded-xl text-white py-2 hover:scale-105 duration-300 Content-center'>Login</button>
             </form>
-            <p className='mt-5 text-xs border-b border-gray-400 py-4'>Forgot your password?</p>
+            <Link to={'/forgotPassword'} className='mt-5 text-xs border-b border-gray-400 py-4'>Forgot your password?</Link>
             <div className='mt-3 text-sm flex justify-between items-center'>
               <p>don't have an account</p>
               <button className='py-2 px-5 bg-[#106F97] text-white

@@ -1,13 +1,14 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation,useNavigate } from 'react-router-dom';
 import './register.css';
 
 const OtpVerification = () => {
     const location = useLocation();
-    const { email, password } = location.state || {};
+    const { email, password,Register } = location.state || {};
     const [maskedEmail, setMaskedEmail] = useState("");
     const otpRefs = useRef([]);
-    const [otp, setOtp] = useState(["", "", "", ""]);
+    const nav = useNavigate();
+
 
     useEffect(() => {
         if (email) {
@@ -56,6 +57,11 @@ const OtpVerification = () => {
                 }),
             }).then((res) => {
                 if (res.ok) {
+                    if(!Register){
+                        setTimeout(() => {
+                            nav('/ResetPassword');
+                        }, 1000);
+                    }
                     document.getElementById("successMessage").style.display = 'block';
                     document.getElementById("errorMessage").style.display = 'none';
                 } else {
