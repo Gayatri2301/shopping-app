@@ -7,6 +7,7 @@ import ForgotPassword from './components/ForgotPassword/ForgotPassword';
 import ResetPassword from './components/ForgotPassword/ResetPassword';
 import Dashboard from './components/Dashboard/Dashboard';
 import { AuthProvider } from './utils/auth';
+import NotFound from './components/NotFound';
 
 const App = () => {
   return (
@@ -18,7 +19,7 @@ const App = () => {
         <Route path='/forgotPassword' element={<ForgotPassword />} />   
         <Route path='/ResetPassword' element={<ResetPassword />} />
         <Route path='/profile' element={<Dashboard />} />
-        <Route path='*' element/>
+        <Route path='*' element={<NotFound/>}/>
       </Routes>
     </Router>
   );
