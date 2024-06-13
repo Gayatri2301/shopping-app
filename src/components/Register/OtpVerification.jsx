@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useLocation,useNavigate } from 'react-router-dom';
-import './register.css';
 
 const OtpVerification = () => {
     const location = useLocation();
@@ -79,13 +78,13 @@ const OtpVerification = () => {
 
     return (
         <section className="bg-[#106F97] min-h-screen flex items-center justify-center">
-        <div className='bg-gray-100 flex rounded-2xl shadow-lg max-w-3xl p-5 items-center'>
+        <div className='bg-gray-100 flex rounded-2xl shadow-2xl max-w-3xl p-5 items-center'>
           <div className='px-16'>
         <div className="flex items-center flex-col mt-5 px-5" id="verify">
-        <h2 className='font-bold text-2xl text-[#106F97]'>Reset Password</h2>
-            <p className=' mt-4 text-[#106F97]'>OTP has been sent to <span id="PartialEmail">{maskedEmail}</span></p>
+        <h2 className='font-bold text-2xl text-[#106F97]'>Enter OTP</h2>
+            <p className=' mt-4 text-black'>OTP has been sent to <span id="PartialEmail">{maskedEmail}</span></p>
             <div className='mt-5'>
-            <div className="bg-[#106F97] pr-5 pl-5 py-5 gap-5 flex place-content-center">
+            <div className="bg-[#106F97] pr-5 pl-5 py-5 gap-5 flex place-content-center rounded">
                 {[0, 1, 2, 3].map((i) => (
                     <input
                         key={i}
@@ -98,15 +97,13 @@ const OtpVerification = () => {
             </div>
             </div>
             <button className='mt-5 bg-[#106F97] rounded-xl text-white py-2 hover:scale-105 duration-300 Content-center w-1/2 ' onClick={checkOTP}>Verify OTP</button>
-            <div className='mt-5'>
-            <div id="successMessage" className="message success " style={{ display: 'none' }}>
+            <div id="successMessage" className="message success mt-5 text-green-900 bg-green-200 rounded p-2 hidden" >
                 OTP verified successfully
             </div>
-            <div id="errorMessage" className="message error" style={{ display: 'none' }}>
+            <div id="errorMessage" className="message error mt-5 text-red-900 bg-red-200 w-fit rounded p-2 hidden" >
                 Invalid OTP
             </div>
             </div>
-        </div>
         </div>
         </div>
         </section>
