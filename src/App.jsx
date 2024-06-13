@@ -10,7 +10,6 @@ import { AuthProvider } from './utils/auth';
 
 const App = () => {
   return (
-    <AuthProvider>
     <Router>
       <Routes>
         <Route path='/' element={<Login />} />
@@ -22,7 +21,6 @@ const App = () => {
         <Route path='*' element/>
       </Routes>
     </Router>
-    </AuthProvider>
   );
 }
 
