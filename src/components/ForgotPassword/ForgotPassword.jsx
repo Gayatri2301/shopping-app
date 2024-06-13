@@ -19,6 +19,7 @@ const ForgotPassword = () => {
                 .then((res) => {
                     if (res.ok) {
                         nav('/otpVerification', { state: { email,Register } });
+                        
                         console.log("OTP sent");
                     } else {
                         alert("Can't send OTP, Check your Internet connection")
