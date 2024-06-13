@@ -8,7 +8,7 @@ const Login = () => {
         <div className='bg-gray-100 flex rounded-2xl shadow-lg max-w-3xl p-5 items-center'>
           <div className='md:w-1/2 px-16'>
             <h2 className='font-bold text-2xl text-[#106F97]'>Login</h2>
-            <p className='text-sm mt-4 text-[#106F97]'>Already have an account, Please login</p>
+            <p className='text-sm mt-4 text-black'>Already have an account, Please login</p>
             <form action='' className='flex flex-col gap-4'>
               <input className='p-2 mt-2 rounded-xl border' type='text' name='email' placeholder='Email'></input>
               <div className='relative'>
@@ -20,11 +20,13 @@ const Login = () => {
               </div>
               <button className='bg-[#106F97] rounded-xl text-white py-2 hover:scale-105 duration-300 Content-center'>Login</button>
             </form>
-            <Link to={'/forgotPassword'} className='mt-5 text-xs text-blue-500 border-b border-gray-400 py-4'>Forgot your password?</Link>
+            <div className='mt-5'>
+            <Link to={'/forgotPassword'} className='mt-5 text-sm text-blue-700 border-b border-gray-400 py-4'>Forgot your password?</Link>
+            </div>
             <div className='mt-3 text-sm flex justify-between items-center'>
-              <p>don't have an account</p>
+              <p>don't have an account?</p>
               <button className='py-2 px-5 bg-[#106F97] text-white
-               border rounded-xl hover:scale-110 duration-300'><Link to={'/register'}>Register</Link></button>
+               border rounded-xl hover:scale-110 duration-300'><Link to={'/register'}> Register</Link></button>
             </div>
           </div>
           <div className='md:block hidden w-1/2'>

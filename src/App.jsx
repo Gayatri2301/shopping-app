@@ -10,7 +10,10 @@ import { AuthProvider } from './utils/auth';
 
 const App = () => {
   return (
+<<<<<<< HEAD
    
+=======
+>>>>>>> d67ac2a667158df7f7f47950ec2d9cfbffd51b37
     <Router>
       <Routes>
         <Route path='/' element={<Login />} />
@@ -22,7 +25,10 @@ const App = () => {
         <Route path='*' element/>
       </Routes>
     </Router>
+<<<<<<< HEAD
     
+=======
+>>>>>>> d67ac2a667158df7f7f47950ec2d9cfbffd51b37
   );
 }
 
