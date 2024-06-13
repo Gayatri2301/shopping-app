@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const Login = () => {
   return (
     <div>
-      <section className="bg-gray-50 min-h-screen flex items-center justify-center">
+      <section className="bg-[#106F97] min-h-screen flex items-center justify-center">
         <div className='bg-gray-100 flex rounded-2xl shadow-lg max-w-3xl p-5 items-center'>
           <div className='md:w-1/2 px-16'>
             <h2 className='font-bold text-2xl text-[#106F97]'>Login</h2>
@@ -20,7 +20,7 @@ const Login = () => {
               </div>
               <button className='bg-[#106F97] rounded-xl text-white py-2 hover:scale-105 duration-300 Content-center'>Login</button>
             </form>
-            <Link to={'/forgotPassword'} className='mt-5 text-xs border-b border-gray-400 py-4'>Forgot your password?</Link>
+            <Link to={'/forgotPassword'} className='mt-5 text-xs text-blue-500 border-b border-gray-400 py-4'>Forgot your password?</Link>
             <div className='mt-3 text-sm flex justify-between items-center'>
               <p>don't have an account</p>
               <button className='py-2 px-5 bg-[#106F97] text-white
