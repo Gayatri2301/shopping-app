@@ -47,7 +47,7 @@ const OtpVerification = () => {
             otp_check += ip.value;
         });
         if (otp_check.length === 4) {
-            fetch('http://localhost:4000/verify', {
+            fetch('https://shopping-app-45uk.vercel.app/verify', {
                 method: "POST",
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -77,12 +77,12 @@ const OtpVerification = () => {
     };
 
     return (
-        <section className="bg-[#106F97] min-h-screen flex items-center justify-center">
+        <section className="bg-[#106F97] min-h-screen flex items-center justify-center ">
         <div className='bg-gray-100 flex rounded-2xl shadow-2xl max-w-3xl p-5 items-center'>
           <div className='px-16'>
         <div className="flex items-center flex-col mt-5 px-5" id="verify">
         <h2 className='font-bold text-2xl text-[#106F97]'>Enter OTP</h2>
-            <p className=' mt-4 text-black'>OTP has been sent to <span id="PartialEmail">{maskedEmail}</span></p>
+            <p className=' mt-2 text-black w-64'>OTP has been sent to <span >{maskedEmail}</span></p>
             <div className='mt-5'>
             <div className="bg-[#106F97] pr-5 pl-5 py-5 gap-5 flex place-content-center rounded">
                 {[0, 1, 2, 3].map((i) => (
