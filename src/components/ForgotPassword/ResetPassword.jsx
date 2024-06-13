@@ -9,6 +9,7 @@ const ResetPassword = () => {
         if (password === confirmPassword) {
             if (password.length >= 8) {
                 alert("Sucessfully changed");
+                localStorage.removeItem("ResetPass");
                 nav('/');
             } else {
                 alert("Password should be atleast 8 characters")

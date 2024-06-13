@@ -7,28 +7,34 @@ import ForgotPassword from './components/ForgotPassword/ForgotPassword';
 import ResetPassword from './components/ForgotPassword/ResetPassword';
 import Dashboard from './components/Dashboard/Dashboard';
 import { AuthProvider } from './utils/auth';
+import PrivateRouteLayout from './utils/PrivateLayout';
+import NotFound from './components/NotFound';
+import OtpLayout from './utils/OtpLayout';
+import ResetLayout from './utils/ResetLayout';
 
 const App = () => {
   return (
-<<<<<<< HEAD
-   
-=======
->>>>>>> d67ac2a667158df7f7f47950ec2d9cfbffd51b37
     <Router>
       <Routes>
+        {/* public routes  */}
         <Route path='/' element={<Login />} />
         <Route path='/register' element={<Register />} />
-        <Route path='otpVerification' element={<OtpVerification />} />
-        <Route path='/forgotPassword' element={<ForgotPassword />} />   
-        <Route path='/ResetPassword' element={<ResetPassword />} />
-        <Route path='/profile' element={<Dashboard />} />
-        <Route path='*' element/>
+        <Route path='/forgotPassword' element={<ForgotPassword />} />
+
+        {/* Private Routes  */}
+        <Route element={<PrivateRouteLayout />}>
+          <Route path='/profile' element={<Dashboard />} />
+        </Route>
+        <Route element={<OtpLayout />}>
+          <Route path='otpVerification' element={<OtpVerification />} />
+        </Route>
+        <Route element={<ResetLayout />}>
+          <Route path='/ResetPassword' element={<ResetPassword />} />
+        </Route>
+
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </Router>
-<<<<<<< HEAD
-    
-=======
->>>>>>> d67ac2a667158df7f7f47950ec2d9cfbffd51b37
   );
 }
 

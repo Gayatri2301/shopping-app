@@ -1,17 +1,36 @@
-import { createContext,useState,useContext } from "react";
+import { createContext, useState, useContext } from "react";
 
 const authContext = createContext();
 
-export const AuthProvider = ()=>{
-    const [user,setuser] = useState(null);
-    const login = (user)=>{
-        setuser(user)
-    }
-    const logout = ()=>{
-        setuser(null)
-    }
-}
+export const AuthProvider = ({ children }) => {
+    const [user, setUser] = useState(localStorage.getItem("user") || null);
 
-export const useAuth = ()=>{
-    return useContext(AuthProvider)
-}
+    const hasEmail = (val) => {
+        if (val) {
+            localStorage.setItem("hasEmail", "true");
+        } else {
+            localStorage.removeItem("hasEmail");
+        }
+    };
+
+    const login = (user) => {
+        setUser(user);
+        localStorage.setItem("user", user);
+    };
+
+    const logout = () => {
+        setUser(null);
+        localStorage.removeItem("user");
+        localStorage.removeItem("hasEmail");
+    };
+
+    return (
+        <authContext.Provider value={{ user, login, logout, hasEmail }}>
+            {children}
+        </authContext.Provider>
+    );
+};
+
+export const useAuth = () => {
+    return useContext(authContext);
+};
