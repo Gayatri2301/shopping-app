@@ -57,6 +57,7 @@ app.post('/sendOtp', (req, res) => {
                 delete savedOtps[email];  
             }, 50000);
             res.send('OTP sent');
+            console.log(savedOtps)
         }
     });
 });
