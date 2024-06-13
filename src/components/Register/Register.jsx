@@ -10,7 +10,8 @@ const Register = () => {
     const Register = true;
     const nav = useNavigate();
 
-    const sendOtp = () => {
+    const sendOtp = (e) => {
+        e.preventDefault()
         setLoading(true);
         const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         if (regex.test(email)) {
@@ -35,7 +36,7 @@ const Register = () => {
     };
     if (loading) {
         return (
-            <h1>Loading</h1>
+            <h1>Loading,please wait</h1>
         )
     } else {
         return (
