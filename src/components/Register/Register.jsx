@@ -14,7 +14,7 @@ const Register = () => {
         setLoading(true);
         const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         if (regex.test(email)) {
-            fetch("http://localhost:4000/sendOtp", {
+            fetch("https://shopping-app-45uk.vercel.app/sendOtp", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email: email }),
