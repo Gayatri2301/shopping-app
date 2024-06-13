@@ -1,10 +1,12 @@
 import React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../utils/auth';
 
 const ForgotPassword = () => {
     const [email,setEmail] = useState("");
     const [loading,setLoading] = useState(false);
+    const {hasEmail} = useAuth();
     const Register = false;
     const nav = useNavigate();
     const sendOtp = () => {
@@ -18,6 +20,7 @@ const ForgotPassword = () => {
             })
                 .then((res) => {
                     if (res.ok) {
+                        hasEmail(true);
                         nav('/otpVerification', { state: { email,Register } });
                         
                         console.log("OTP sent");

@@ -21,6 +21,7 @@ const Register = () => {
             })
                 .then((res) => {
                     if (res.ok) {
+                        localStorage.setItem("hasEmail","true");
                         nav('/otpVerification', { state: { email, password,Register } });
                         console.log("OTP sent");
                     } else {

@@ -58,8 +58,16 @@ const OtpVerification = () => {
                 if (res.ok) {
                     if(!Register){
                         setTimeout(() => {
+                            localStorage.removeItem("hasEmail");
+                            localStorage.setItem("ResetPass","true")
                             nav('/ResetPassword');
                         }, 1000);
+                    }else{
+                        setTimeout(() => {
+                            localStorage.removeItem("hasEmail");
+                            alert("please Login")
+                            nav('/')
+                        }, 5000);
                     }
                     document.getElementById("successMessage").style.display = 'block';
                     document.getElementById("errorMessage").style.display = 'none';
