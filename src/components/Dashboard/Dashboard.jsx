@@ -1,9 +1,10 @@
 import React from 'react'
 
 const Dashboard = () => {
+  const data = JSON.parse(localStorage.getItem('data'));
   return (
     <div>
-      <h1>Dashboard</h1>
+      welcome to {data.firstName} {data.lastName}
     </div>
   )
 }

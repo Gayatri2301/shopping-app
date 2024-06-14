@@ -23,7 +23,7 @@ const App = () => {
 
         {/* Private Routes  */}
         <Route element={<PrivateRouteLayout />}>
-          <Route path='/profile' element={<Dashboard />} />
+          <Route path='/Dashboard' element={<Dashboard />} />
         </Route>
         <Route element={<OtpLayout />}>
           <Route path='otpVerification' element={<OtpVerification />} />

@@ -64,7 +64,10 @@ const OtpVerification = () => {
                         }, 1000);
                     }else{
                         setTimeout(() => {
-                            localStorage.removeItem("hasEmail");
+                            localStorage.removeItem("hasEmail"); 
+                            localStorage.setItem("email",email);
+                            localStorage.setItem("password",password);
+                            console.log(email,password); 
                             alert("please Login")
                             nav('/')
                         }, 5000);
