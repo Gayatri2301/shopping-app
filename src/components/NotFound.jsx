@@ -3,7 +3,9 @@ import React from 'react'
 const NotFound = () => {
   return (
     <div>
-      page Not found 
+      <div className='w-full'>
+            <img className=" w-full" src='assets/pageNotFound.png' alt='image'/>
+          </div>
     </div>
   )
 }
