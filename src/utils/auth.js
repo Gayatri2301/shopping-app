@@ -12,10 +12,10 @@ export const AuthProvider = ({ children }) => {
             localStorage.removeItem("hasEmail");
         }
     };
-    localStorage.setItem("user", user);
+    
     const login = (user) => {
         setUser(user);
-        
+        localStorage.setItem("user", user);
     };
 
     const logout = () => {
