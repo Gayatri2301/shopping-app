@@ -1,15 +1,15 @@
-import React from 'react'
+import React from 'react';
 
 const ProductCard = (props) => {
-  console.log(props);
+
   return (
-    <div className='card'>
-      <img src={props.image} />
-      <p>product : {props.title}</p>
-      <p>price : ${props.price}</p>
-      <p>rating : {props.rating.rate}</p>
+    <div className='card' onClick={() => props.onUpdate(props.id)}>
+      <img src={props.image} alt={props.title} />
+      <p>Product: {props.title}</p>
+      <p>Price: ${props.price}</p>
+      <p>Rating: {props.rating.rate}</p>
     </div>
   )
 }
 
-export default ProductCard
+export default ProductCard;

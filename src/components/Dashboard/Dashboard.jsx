@@ -1,13 +1,33 @@
 import React from 'react'
 import ProductList from '../Products/ProductList';
+import { useAuth } from '../../utils/auth';
+import { useEffect } from 'react';
+import { useNavigate, Link, Router } from 'react-router-dom';
 
 const Dashboard = () => {
-  const data = JSON.parse(localStorage.getItem('data'));
+  const { user,data } = useAuth();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const handlePopState = (event) => {
+      event.preventDefault()
+      if (!user) {
+        navigate('/login', { replace: true });
+      } else {
+        navigate('/dashboard', { replace: true });
+      }
+    };
+
+    window.addEventListener('popstate', handlePopState);
+
+    return () => {
+      window.removeEventListener('popstate', handlePopState);
+    };
+  }, [navigate, user]);
+  
+
   return (
     <div>
-      <div className='bg-red'>
-      welcome to {data.firstName} {data.lastName}
-      </div>
       <ProductList />
     </div>
   )

@@ -6,33 +6,43 @@ import OtpVerification from './components/Register/OtpVerification';
 import ForgotPassword from './components/ForgotPassword/ForgotPassword';
 import ResetPassword from './components/ForgotPassword/ResetPassword';
 import Dashboard from './components/Dashboard/Dashboard';
-import { AuthProvider } from './utils/auth';
+import { AuthProvider, useAuth } from './utils/auth';
 import PrivateRouteLayout from './utils/PrivateLayout';
 import NotFound from './components/NotFound';
 import OtpLayout from './utils/OtpLayout';
 import ResetLayout from './utils/ResetLayout';
+import Profile from './components/Pages/Profile';
+import Nav from './components/Dashboard/Nav';
+import Cart from './components/Pages/Cart';
+import WishList from './components/Pages/WishList';
 
 const App = () => {
+  const { user } = useAuth();
+  console.log(user);
   return (
     <Router>
+      {user ? <Nav /> : null}
       <Routes>
-        {/* public routes  */}
-        <Route path='/' element={<Login />} />
-        <Route path='/register' element={<Register />} />
-        <Route path='/forgotPassword' element={<ForgotPassword />} />
+        {/* Public routes */}
+        <Route path="/" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/forgotPassword" element={<ForgotPassword />} />
 
-        {/* Private Routes  */}
+        {/* Private routes */}
         <Route element={<PrivateRouteLayout />}>
-          <Route path='/Dashboard' element={<Dashboard />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path='/Cart' element={<Cart />} />
+          <Route path='/wishList' element={<WishList />} />
         </Route>
         <Route element={<OtpLayout />}>
-          <Route path='otpVerification' element={<OtpVerification />} />
+          <Route path="/otpVerification" element={<OtpVerification />} />
         </Route>
         <Route element={<ResetLayout />}>
-          <Route path='/ResetPassword' element={<ResetPassword />} />
+          <Route path="/resetPassword" element={<ResetPassword />} />
         </Route>
 
-        <Route path='*' element={<NotFound />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   );
