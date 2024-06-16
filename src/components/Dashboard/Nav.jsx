@@ -7,11 +7,14 @@ const Nav = () => {
 
     return (
         <div>
-            <nav className='bg-[#106F97] flex justify-between'>
+            <nav className='p-5 bg-[#106F97] shadow md:flex md:items-center md:justify-between'>
                 {true && (
-                    <p className="text-white">
-                        One shop
-                    </p>
+                    <div>
+                        <span className='text-white text-2xl font-[poppins]'>
+                            <img className='mr-2 h-10 inline rounded-full' src='assets/logo.png ' alt='logo'/>
+                        OneShop
+                        </span>
+                    </div>
                 )}
                 <input type="text" placeholder='search' />
                 <Link to={'/wishList'}>wishlist</Link>
