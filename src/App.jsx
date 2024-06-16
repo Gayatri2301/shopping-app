@@ -32,7 +32,7 @@ const App = () => {
         <Route element={<PrivateRouteLayout />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path='/Cart' element={<Cart />} />
+          <Route path='/cart' element={<Cart />} />
           <Route path='/wishList' element={<WishList />} />
         </Route>
         <Route element={<OtpLayout />}>
