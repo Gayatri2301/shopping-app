@@ -29,12 +29,14 @@ const Nav = () => {
                         </span>
                     </div>
                 )}
-                <button onClick={home}>Home</button>
-                <input type="text" placeholder='search' />
-                <button onClick={wishList}>wishList</button>
-                <button onClick={Cart}>Cart</button>
-                <button onClick={Profile}>Profile</button>
-                <button onClick={logout}>Logout</button>
+                <div className='md:flex md:items-center z-[-1] md:z-auto w-full left-0 md:w-auto ms:py-0 py-4 md:pl-0 pl-7'>
+                <input className="p-2 mt-2 rounded-xl border"type="text" placeholder='search' />
+                <button className='mx-4 text-white my-6 md:my-0' onClick={home}>Home</button>
+                <button className='mx-4 text-white my-6 md:my-0' onClick={wishList}>wishList</button>
+                <button className='mx-4 text-white my-6 md:my-0' onClick={Cart}>Cart</button>
+                <button className='mx-4 text-white my-6 md:my-0' onClick={Profile}>Profile</button>
+                <button className='mx-4 text-white my-6 md:my-0' onClick={logout}>Logout</button>
+                </div>
             </nav>
         </div>
     );
