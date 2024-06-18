@@ -3,24 +3,24 @@ const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const nm = require('nodemailer');
-//const mongoose = require("mongoose");
+const mongoose = require("mongoose");
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-require('dotenv').config(); 
-const mongoose = require('mongoose');
-const Users = require('./model')
+// require('dotenv').config(); 
+// const mongoose = require('mongoose');
+// const Users = require('./model')
 
-const uri = process.env.MONGODB_URI;
+// const uri = process.env.MONGODB_URI;
 
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => {
-    console.log("Connected to MongoDB");
-  })
-  .catch((error) => {
-    console.error("Error connecting to MongoDB:", error.message);
-  });
+// mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+//   .then(() => {
+//     console.log("Connected to MongoDB");
+//   })
+//   .catch((error) => {
+//     console.error("Error connecting to MongoDB:", error.message);
+//   });
 
 let savedOtps = {};
 
