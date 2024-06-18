@@ -4,16 +4,24 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const nm = require('nodemailer');
 //const mongoose = require("mongoose");
-//const Users = require('./model')
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-//mongoose.connect('mongodb+srv://oneshop982:oneshop982@cluster0.0pezb70.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',).then(
-//()=>{
-//console.log("conncted")
-//}
-//)
+require('dotenv').config(); 
+const mongoose = require('mongoose');
+const Users = require('./model')
+
+const uri = process.env.MONGODB_URI;
+
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => {
+    console.log("Connected to MongoDB");
+  })
+  .catch((error) => {
+    console.error("Error connecting to MongoDB:", error.message);
+  });
+
 let savedOtps = {};
 
 app.listen(4000, () => {
