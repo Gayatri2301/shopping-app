@@ -6,6 +6,7 @@ const ProductCard = (props) => {
   const addToWishList = (id, event) => {
     event.stopPropagation(); 
     setWishList([...wishList, id]);
+    
   };
 
   return (
