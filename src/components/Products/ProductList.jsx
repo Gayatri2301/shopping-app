@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import ProductCard from './ProductCard';
-import './Products.css';
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
@@ -45,7 +44,7 @@ const ProductList = () => {
   }
 
   return (
-    <div className='productList'>
+    <div className='productList flex flex-wrap gap-2.5 m-5'>
       {products.map(p => (
         <ProductCard
           {...p}

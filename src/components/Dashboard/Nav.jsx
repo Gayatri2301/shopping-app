@@ -23,7 +23,7 @@ const Nav = () => {
             <nav className='p-5 bg-[#106F97] shadow md:flex md:items-center md:justify-between'>
                 {true && (
                     <div>
-                        <span className='text-white text-2xl font-[poppins]'>
+                        <span className='text-white text-4xl font-[poppins] font-bold'>
                             <img className='mr-2 h-10 inline rounded-full' src='assets/logo.png ' alt='logo' />
                             OneShop
                         </span>
