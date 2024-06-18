@@ -10,7 +10,7 @@ const ProductCard = (props) => {
   };
 
   return (
-    <div className='card' onClick={() => props.onUpdate(props.id)}>
+    <div className='card shadow-2xl rounded-md p-5 w-[250px]' onClick={() => props.onUpdate(props.id)}>
       <img className='h-52' src={props.image} alt={props.title} />
       <p>Product: {props.title}</p>
       <p>Price: ${props.price}</p>
