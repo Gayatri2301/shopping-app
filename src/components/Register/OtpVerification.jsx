@@ -47,7 +47,7 @@ const OtpVerification = () => {
             otp_check += ip.value;
         });
         if (otp_check.length === 4) {
-            fetch('http://localhost:4000/verify', { //https://shopping-app-45uk.vercel.app
+            fetch('https://shopping-app-45uk.vercel.app/verify', { //https://shopping-app-45uk.vercel.app
                 method: "POST",
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
