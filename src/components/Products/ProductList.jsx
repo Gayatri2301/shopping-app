@@ -31,6 +31,7 @@ const ProductList = () => {
     fetchProductById(id)
   };
 
+  
   if (products.length === 0) {
     return (
       <section className="bg-[#106F97] min-h-screen flex items-center justify-center">
