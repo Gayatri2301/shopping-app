@@ -5,6 +5,7 @@ import { useAuth } from '../../utils/auth';
 const Nav = () => {
     const { data, logout } = useAuth();
     const nav = useNavigate();
+    
 
     const wishList = () => {
         nav('/wishList')
