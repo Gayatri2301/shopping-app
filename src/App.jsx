@@ -6,7 +6,7 @@ import OtpVerification from './components/Register/OtpVerification';
 import ForgotPassword from './components/ForgotPassword/ForgotPassword';
 import ResetPassword from './components/ForgotPassword/ResetPassword';
 import Dashboard from './components/Dashboard/Dashboard';
-import { AuthProvider, useAuth } from './utils/auth';
+import { AuthProvider, useAuth } from './utils/auth'; 
 import PrivateRouteLayout from './utils/PrivateLayout';
 import NotFound from './components/NotFound';
 import OtpLayout from './utils/OtpLayout';
