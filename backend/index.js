@@ -3,13 +3,13 @@ const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const nm = require('nodemailer');
-// const dotenv = require('dotenv');
+// const dotenv = require('dotenv');    
 
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
+    
 // dotenv.config()
 // const mongoose = require('mongoose');
 // const MONGODB_URI = process.env.MONGODB_URI;
