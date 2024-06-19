@@ -27,7 +27,7 @@ const Dashboard = () => {
   
 
   return (
-   <div>
+    <div>
       <ProductList />
     </div>
   )
