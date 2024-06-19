@@ -10,12 +10,12 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
     
-dotenv.config()
+// dotenv.config()
 const mongoose = require('mongoose');
-const MONGODB_URI = process.env.MONGODB_URI;
+// const MONGODB_URI = process.env.MONGODB_URI;
 
 
-mongoose.connect(MONGODB_URI, )
+mongoose.connect('mongodb+srv://oneshop982:oneshop982@cluster0.0pezb70.mongodb.net/oneshop?retryWrites=true&w=majority&appName=Cluster0', )
   .then(() => {
     console.log('Connected to MongoDB');
   })
