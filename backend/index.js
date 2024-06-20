@@ -5,6 +5,7 @@ const cors = require('cors');
 const nodemailer = require('nodemailer');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
+
 const jwt = require('jsonwebtoken');
 const data = require('./models/data');
 const authMiddleware = require('./middleware');
