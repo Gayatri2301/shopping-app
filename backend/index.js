@@ -12,8 +12,8 @@ const authMiddleware = require('./middleware');
 
 dotenv.config();
 
-const MONGODB_URI = process.env.MONGODB_URI;
-const JWT_SECRET = process.env.JWT_SECRET;
+const MONGODB_URI = 'mongodb+srv://oneshop982:oneshop982@cluster0.0pezb70.mongodb.net/oneshop?retryWrites=true&w=majority&appName=Cluster0';
+const JWT_SECRET = "adfrar23r2tgargd";
 
 
 mongoose.connect(MONGODB_URI)
