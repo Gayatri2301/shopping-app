@@ -5,7 +5,7 @@ const cors = require('cors');
 const nodemailer = require('nodemailer');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
+
 const jwt = require('jsonwebtoken');
 const data = require('./models/data');
 const authMiddleware = require('./middleware');
@@ -92,7 +92,7 @@ app.post('/register', async (req, res) => {
       return res.status(400).send("User already exists");
     }
 
-    const hashedPassword = await bcrypt.hash(password, 10);
+    const hashedPassword = password;
 
     let newUser = new data({
       email, password: hashedPassword, firstName, lastName, phone, dob, gender, address
@@ -114,7 +114,7 @@ app.post('/login', async (req, res) => {
       return res.status(400).send("User not found");
     }
 
-    const isMatch = await bcrypt.compare(password, user.password);
+    const isMatch = password === user.password;
     if (!isMatch) {
       return res.status(400).send("Password incorrect");
     }
