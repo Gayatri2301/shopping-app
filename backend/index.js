@@ -92,10 +92,10 @@ app.post('/register', async (req, res) => {
       return res.status(400).send("User already exists");
     }
 
-    const hashedPassword = password;
+    
 
     let newUser = new data({
-      email, password: hashedPassword, firstName, lastName, phone, dob, gender, address
+      email, password, firstName, lastName, phone, dob:new Date(dob), gender, address
     });
 
     await newUser.save();
