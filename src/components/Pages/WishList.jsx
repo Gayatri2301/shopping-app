@@ -24,7 +24,7 @@ const WishList = () => {
 
   return (
     <div>
-      <p>WishList Count: {wishList.length}</p>
+      <p>Items: {wishList.length}</p>
       <ul>
         <div className="flex gap-2 flex-row">
           {wishList.map((item) => (
@@ -42,7 +42,7 @@ const WishList = () => {
                   className="bg-[#106F97] text-white p-2 mt-2"
                   onClick={() => removeWishList(item.id)}
                 >
-                  Remove Wishlist
+                  Remove
                 </button>
                 <button
                   className="bg-[#106F97] text-white p-2 mt-2"

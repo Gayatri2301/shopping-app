@@ -21,17 +21,20 @@ const Cart = () => {
     localStorage.setItem('wishList', JSON.stringify(temp));
   }
   return (
-    <div>
-      <p>Cart Items: {carts.length}</p>
+    <div className='col-span-9 space-y-4'>
+      <p className='text-lg font-medium capitalize mb px-4 pt-4'>Items: {carts.length}</p>
       <ul>
-        <div className='flex gap-2 flex-row'>
+        <div className='flex items-center justify-between gap-6 p-4 border border-gray-200 rounded'>
           {carts.map((item) => (
             <div className='flex flex-col justify-between shadow-xl rounded-md p-5 w-[250px]' key={item.id} >
-              <img className='h-52' src={item.image} alt={item.title} />
-              <p>{item.title}</p>
+              <div className='w-28 flex-shrink-0'>
+              <img className='w-full' src={item.image} alt={item.title} />
+              </div>
+              <div className='w-1/3'>
+              <p className='text-gray-800 text-xl font-medium uppercase'>{item.title}</p>
               <p>Price: ${item.price}</p>
               <p>Rating: {item.rating.rate}</p>
-
+              </div>
               <div className='flex gap-2'>
                 <button
                   className='bg-[#106F97] text-white p-2 mt-2'
