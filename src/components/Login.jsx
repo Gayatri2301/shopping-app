@@ -1,32 +1,64 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../utils/auth';
-import { useEffect } from 'react';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
-  const { login } = useAuth();
-  const {user} = useAuth();
+  const { login, user, token, data, setData, setUser, setToken } = useAuth();
 
-  useEffect(()=>{
-    if(user){
+  useEffect(() => {
+    validate();
+    if (user) {
       navigate('/Dashboard');
       console.log(user);
     }
-  },[])
+  }, [user, token, setData, setToken, setUser, navigate]);
 
-  
-
-
-  const handleLogin = (e) => {
-    e.preventDefault();
-    if (localStorage.getItem('email') === email && localStorage.getItem('password') === password) {
-      login(true);
-      navigate('/dashboard', { replace: true, state: { email } });
+  const validate = async () => {
+    if (!token) {
+      return;
+    }
+    try{
+    const res = await fetch('https://shopping-app-45uk.vercel.app/profile', {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ xtoken: token }),
+    });
+    if (res.ok) {
+      let d = await res.json();
+      setData(d);
+      setUser(true);
+      localStorage.setItem('user', true);
     } else {
-      alert('Invalid email or password');
+      setToken('');
+    }
+  }catch(error){
+    console.log(error);
+  }
+  };
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await fetch('https://shopping-app-45uk.vercel.app/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password }),
+      });
+      if (res.ok) {
+        let token = await res.json();
+        console.log(token);
+        localStorage.setItem('xtoken', token.token);
+        login(true);
+        navigate('/dashboard', { replace: true, state: { email } });
+      } else {
+        alert('Invalid Password or email');
+      }
+    } catch (error) {
+      console.log(error);
+      alert('check network connection');
     }
   };
 
@@ -89,7 +121,7 @@ const Login = () => {
             </div>
           </div>
           <div className="md:block hidden w-1/2">
-            <img className="rounded-2xl" src="assets/image.png" alt="image" />
+            <img className="rounded-2xl" src={`${process.env.PUBLIC_URL}/assets/image.png`} alt="image" />
           </div>
         </div>
       </section>
