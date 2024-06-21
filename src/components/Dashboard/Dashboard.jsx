@@ -3,6 +3,7 @@ import ProductList from '../Products/ProductList';
 import { useAuth } from '../../utils/auth';
 import { useEffect } from 'react';
 import { useNavigate, Link, Router } from 'react-router-dom';
+import Hero from './Hero';
 
 const Dashboard = () => {
   const { user,data } = useAuth();
@@ -28,6 +29,7 @@ const Dashboard = () => {
 
   return (
     <div>
+      <Hero />
       <ProductList />
     </div>
   )

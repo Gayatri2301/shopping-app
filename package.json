@@ -14,6 +14,8 @@
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.23.1",
     "react-scripts": "5.0.1",
+    "react-slick": "^0.30.2",
+    "slick-carousel": "^1.8.1",
     "swiper": "^11.1.4",
     "web-vitals": "^2.1.4"
   },
@@ -46,8 +48,5 @@
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.4"
   },
-  
-    "proxy": "https://shopping-app-45uk.vercel.app"
-  
-  
+  "proxy": "https://shopping-app-45uk.vercel.app"
 }
