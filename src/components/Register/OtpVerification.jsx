@@ -3,7 +3,7 @@ import { useLocation,useNavigate } from 'react-router-dom';
 
 const OtpVerification = () => {
     const location = useLocation();
-    const { email, password,Register } = location.state || {};
+    const { email, password,Register,data } = location.state || {};
     const [maskedEmail, setMaskedEmail] = useState("");
     const otpRefs = useRef([]);
     const nav = useNavigate();
@@ -47,14 +47,14 @@ const OtpVerification = () => {
             otp_check += ip.value;
         });
         if (otp_check.length === 4) {
-            fetch('https://shopping-app-45uk.vercel.app/verify', { //https://shopping-app-45uk.vercel.app
+            fetch('https://shopping-app-45uk.vercel.app/verify', {
                 method: "POST",
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     'email': email,
                     'otp': otp_check
                 }),
-            }).then((res) => {
+            }).then(async(res) => {
                 if (res.ok) {
                     if(!Register){
                         setTimeout(() => {
@@ -63,14 +63,20 @@ const OtpVerification = () => {
                             nav('/ResetPassword');
                         }, 1000);
                     }else{
-                        setTimeout(() => {
+                        try {
+                            await fetch('https://shopping-app-45uk.vercel.app/register', {
+                                method: "POST",
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify(data),
+                            })
                             localStorage.removeItem("hasEmail"); 
-                            localStorage.setItem("email",email);
-                            localStorage.setItem("password",password);
-                            console.log(email,password); 
+                            console.log(email,password,data); 
                             alert("please Login")
                             nav('/')
-                        }, 5000);
+                        } catch (error) {
+                            console.log(error);
+                        }
+                       
                     }
                     document.getElementById("successMessage").style.display = 'block';
                     document.getElementById("errorMessage").style.display = 'none';

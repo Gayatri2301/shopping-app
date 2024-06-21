@@ -9,6 +9,7 @@ const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
 const data = require('./models/data');
 const authMiddleware = require('./middleware');
+app.use(cors());
 
 dotenv.config();
 
@@ -20,7 +21,7 @@ mongoose.connect(MONGODB_URI)
   .then(() => console.log('Connected to MongoDB'))
   .catch((error) => console.error('Error connecting to MongoDB:', error));
 
-app.use(cors());
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 

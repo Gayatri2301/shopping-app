@@ -14,7 +14,7 @@ const Register = () => {
         password: "",
         firstName: "",
         lastName: "",
-        mobile: "",
+        phone: "",
         dob: "",
         gender: "",
         address: ""
@@ -38,6 +38,8 @@ const Register = () => {
             alert("Passwords don't match");
             setLoading(false);
         } else {
+            data.email = email;
+            data.password = password;
             console.log(data);
             fetch("https://shopping-app-45uk.vercel.app/sendOtp", {
                 method: "POST",
@@ -48,7 +50,7 @@ const Register = () => {
                     if (res.ok) {
                         localStorage.setItem("hasEmail", "true");
                         localStorage.setItem("data", JSON.stringify(updatedData));
-                        nav('/otpVerification', { state: { email, password, Register } });
+                        nav('/otpVerification', { state: { email, password, Register,data } });
                         console.log("OTP sent");
                     } else {
                         alert("Check network connection");
@@ -100,7 +102,7 @@ const Register = () => {
                                     <input type="text" name="lastName" id="lastname" placeholder="Lastname" className="border border-gray-400 py-1 px-2" value={data.lastName} onChange={handleInputChange} required />
                                 </div>
                                 <div className="mt-5">
-                                    <input type="tel" name="mobile" id="mobile" placeholder="Mobile" className="border border-gray-400 py-1 px-2 w-full" value={data.mobile} onChange={handleInputChange} required />
+                                    <input type="tel" name="phone" id="phone" placeholder="Mobile" className="border border-gray-400 py-1 px-2 w-full" value={data.phone} onChange={handleInputChange} required />
                                 </div>
                                 <div className="mt-5">
                                     <input type="email" name="email" id="email" placeholder="Email" value={email} className="border border-gray-400 py-1 px-2 w-full" onChange={(e) => setEmail(e.target.value)} required />
