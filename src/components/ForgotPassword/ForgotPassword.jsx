@@ -18,8 +18,7 @@ const ForgotPassword = () => {
             try {
                 const res = await fetch("https://shopping-app-45uk.vercel.app/resetPass", {
                     method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ email: email }),
+                    headers: { "Content-Type": "application/json","email":email },
                 });
                 if(res.ok){
                     await setId(res.json);
