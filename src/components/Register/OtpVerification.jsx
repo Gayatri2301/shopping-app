@@ -3,7 +3,7 @@ import { useLocation,useNavigate } from 'react-router-dom';
 
 const OtpVerification = () => {
     const location = useLocation();
-    const { email, password,Register,data } = location.state || {};
+    const { email, password,Register,data,id } = location.state || {};
     const [maskedEmail, setMaskedEmail] = useState("");
     const otpRefs = useRef([]);
     const nav = useNavigate();
@@ -60,7 +60,7 @@ const OtpVerification = () => {
                         setTimeout(() => {
                             localStorage.removeItem("hasEmail");
                             localStorage.setItem("ResetPass","true")
-                            nav('/ResetPassword');
+                            nav('/ResetPassword',{state:{id:id}});
                         }, 1000);
                     }else{
                         try {

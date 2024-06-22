@@ -31,7 +31,7 @@ const EditProfile = () => {
         const {email,firstName,lastName,phone,dob,gender,_id} = updatedDate;
        
         try {
-            const res = fetch("https://shopping-app-45uk.vercel.app/update",{
+            const res = await fetch("https://shopping-app-45uk.vercel.app/update",{
                 method:"POST",
                 headers: {
                     'Content-Type': 'application/json',
@@ -40,6 +40,7 @@ const EditProfile = () => {
                     email, firstName, lastName, phone, dob, gender, _id
                 })
             })
+            console.log(res.ok)
             if(res.ok){
                 alert("Sucessfully updated");
             }else{

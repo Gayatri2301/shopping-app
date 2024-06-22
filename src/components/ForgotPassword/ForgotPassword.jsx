@@ -8,12 +8,28 @@ const ForgotPassword = () => {
     const [email, setEmail] = useState("");
     const [loading, setLoading] = useState(false);
     const { hasEmail, user } = useAuth();
+    const [id,setId] = useState(null);
     const Register = false;
     const nav = useNavigate();
-    const sendOtp = () => {
+    const sendOtp = async () => {
         setLoading(true);
         const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         if (regex.test(email)) {
+            try {
+                const res = await fetch("https://shopping-app-45uk.vercel.app/resetPass", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ email: email }),
+                });
+                if(res.ok){
+                    await setId(res.json);
+                }else{
+                    alert("User not found");
+                }
+            } catch (error) {
+                console.log(error);
+                return
+            }
             fetch("https://shopping-app-45uk.vercel.app/sendOtp", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -22,7 +38,7 @@ const ForgotPassword = () => {
                 .then((res) => {
                     if (res.ok) {
                         hasEmail(true);
-                        nav('/otpVerification', { state: { email, Register } });
+                        nav('/otpVerification', { state: { email, Register,id } });
 
                         console.log("OTP sent");
                     } else {

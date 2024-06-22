@@ -1,13 +1,27 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,useLocation } from 'react-router-dom';
 
 const ResetPassword = () => {
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const nav = useNavigate();
-    const reset = () => {
+    const location = useLocation();
+    const {id} = location.state || ""
+    const reset = async() => {
         if (password === confirmPassword) {
             if (password.length >= 8) {
+                try {
+                    const res = await fetch("https://shopping-app-45uk.vercel.app/update",{
+                        method:"POST",
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body:JSON.stringify({_id:id,password:password})
+                    })
+                } catch (error) {
+                    console.log(error);
+                    alert("Failed to reset password");
+                }
                 alert("Sucessfully changed");
                 localStorage.removeItem("ResetPass");
                 nav('/');

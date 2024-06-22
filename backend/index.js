@@ -149,12 +149,24 @@ const updatedUser = await data.findByIdAndUpdate(_id, {...req.body}, {
     new: true, 
     runValidators: true,
   });
-  res.send("Sucessfully updated")
+  res.status(200).send("Sucessfully updated")
   console.log('Updated User:', updatedUser);
 } catch (error) {
   console.error('Error updating user:', error);
-  res.status(400).send('Error in updating')
+  res.status(500).send('Error in updating')
 }
+})
+
+app.get("/resetPass",async(req,res)=>{
+  const email = req.header("email");
+  try {
+    const user = await data.findOne({email:email});
+    res.json(user._id);
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("Error geting id");
+  }
+
 })
 
 
