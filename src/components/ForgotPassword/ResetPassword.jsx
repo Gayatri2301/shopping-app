@@ -6,7 +6,8 @@ const ResetPassword = () => {
     const [confirmPassword, setConfirmPassword] = useState("");
     const nav = useNavigate();
     const location = useLocation();
-    const {id} = location.state || ""
+    const {id:_id} = location.state || ""
+    console.log(_id);
     const reset = async() => {
         if (password === confirmPassword) {
             if (password.length >= 8) {
@@ -16,13 +17,18 @@ const ResetPassword = () => {
                         headers: {
                             'Content-Type': 'application/json',
                         },
-                        body:JSON.stringify({_id:id,password:password})
+                        body:JSON.stringify({_id,password})
                     })
+                    if(res.ok){
+                        alert("Sucessfully changed");
+                    }else{
+                        alert("Can't resetPassword");
+                        return
+                    }
                 } catch (error) {
                     console.log(error);
                     alert("Failed to reset password");
                 }
-                alert("Sucessfully changed");
                 localStorage.removeItem("ResetPass");
                 nav('/');
             } else {

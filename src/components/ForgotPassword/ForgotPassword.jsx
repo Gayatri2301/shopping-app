@@ -17,16 +17,23 @@ const ForgotPassword = () => {
         if (regex.test(email)) {
             try {
                 const res = await fetch("https://shopping-app-45uk.vercel.app/resetPass", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json","email":email },
+                    method: "GET",
+                    headers: { "Content-Type": "application/json",'email':email },
                 });
+                console.log(res)
                 if(res.ok){
-                    await setId(res.json);
+                    const d = res.json();
+                    setId(d);
+                    console.log(id);
+                    
                 }else{
                     alert("User not found");
+                    setLoading(false);
+                    return
                 }
             } catch (error) {
                 console.log(error);
+                setLoading(false)
                 return
             }
             fetch("https://shopping-app-45uk.vercel.app/sendOtp", {

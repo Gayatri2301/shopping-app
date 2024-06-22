@@ -29,6 +29,7 @@ const EditProfile = () => {
 
     const handleSave = async() => {
         const {email,firstName,lastName,phone,dob,gender,_id} = updatedDate;
+        console.log(_id);
        
         try {
             const res = await fetch("https://shopping-app-45uk.vercel.app/update",{
