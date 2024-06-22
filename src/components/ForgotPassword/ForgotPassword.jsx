@@ -8,7 +8,7 @@ const ForgotPassword = () => {
     const [email, setEmail] = useState("");
     const [loading, setLoading] = useState(false);
     const { hasEmail, user } = useAuth();
-    const [id,setId] = useState(null);
+    let id = ""
     const Register = false;
     const nav = useNavigate();
     const sendOtp = async () => {
@@ -20,12 +20,10 @@ const ForgotPassword = () => {
                     method: "GET",
                     headers: { "Content-Type": "application/json",'email':email },
                 });
-                console.log(res)
+                console.log(res);
                 if(res.ok){
-                    const {uid} = res.json();
-                    setId(uid);
-                    console.log(id);
-                    
+                    const {uid} = await res.json();
+                    id = uid;
                 }else{
                     alert("User not found");
                     setLoading(false);

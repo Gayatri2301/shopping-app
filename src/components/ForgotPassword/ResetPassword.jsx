@@ -6,8 +6,7 @@ const ResetPassword = () => {
     const [confirmPassword, setConfirmPassword] = useState("");
     const nav = useNavigate();
     const location = useLocation();
-    const {id:_id} = location.state || ""
-    console.log(_id);
+    const {id:_id} = location.state || "";
     const reset = async() => {
         if (password === confirmPassword) {
             if (password.length >= 8) {
