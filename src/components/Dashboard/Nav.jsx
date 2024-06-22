@@ -24,7 +24,7 @@ const Nav = () => {
                 const profileData = await res.json();
                 setData(profileData);
                 login(true);
-                // console.log('Profile data set:', profileData);
+                console.log('Profile data set:', profileData);
             } else {
                 console.log('Failed to validate token, logging out');
                 console.log(data)

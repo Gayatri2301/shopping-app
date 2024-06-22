@@ -142,4 +142,20 @@ app.get('/profile', authMiddleware, async (req, res) => {
   }
 });
 
+app.post('/update',async(req,res)=>{
+  const {_id} = req.body
+  try{
+const updatedUser = await data.findByIdAndUpdate(_id, {...req.body}, {
+    new: true, 
+    runValidators: true,
+  });
+  res.send("Sucessfully updated")
+  console.log('Updated User:', updatedUser);
+} catch (error) {
+  console.error('Error updating user:', error);
+  res.status(400).send('Error in updating')
+}
+})
+
+
 module.exports = app;

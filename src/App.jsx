@@ -15,6 +15,7 @@ import Profile from './components/Pages/Profile';
 import Nav from './components/Dashboard/Nav';
 import Cart from './components/Pages/Cart';
 import WishList from './components/Pages/WishList';
+import EditProfile from './components/Pages/EditProfile';
 
 const App = () => {
   const { user } = useAuth();
@@ -34,6 +35,7 @@ const App = () => {
           <Route path="/profile" element={<Profile />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/wishList' element={<WishList />} />
+          <Route path='/editProfile' element={<EditProfile />} />
         </Route>
         <Route element={<OtpLayout />}>
           <Route path="/otpVerification" element={<OtpVerification />} />
