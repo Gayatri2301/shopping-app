@@ -9,37 +9,13 @@ const Login = () => {
   const { login, user, token, data, setData, logout, setToken } = useAuth();
 
   useEffect(() => {
-    validate();
     if (user) {
       navigate('/Dashboard');
       console.log(user);
     }
   }, [user, token, setData,login, setToken, navigate]);
 
-  const validate = async () => {
-    if (!token) {
-      logout()
-      return false;
-    }
-    try{
-    const res = await fetch('https://shopping-app-45uk.vercel.app/profile', {
-      method: 'GET',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ xtoken: token }),
-    });
-    if (res.ok) {
-      let d = await res.json();
-      setData(d);
-      login(true)
-        } else {
-      logout();
-      setToken('');
-    }
-  }catch(error){
-    console.log(error);
-    logout()
-  }
-  };
+  
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -51,6 +27,7 @@ const Login = () => {
       });
       if (res.ok) {
         let token = await res.json();
+        setToken(token)
         console.log(token);
         localStorage.setItem('xtoken', token.token);
         login(true);
