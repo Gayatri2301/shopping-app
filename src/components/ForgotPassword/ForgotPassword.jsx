@@ -22,8 +22,8 @@ const ForgotPassword = () => {
                 });
                 console.log(res)
                 if(res.ok){
-                    const d = res.json();
-                    setId(d);
+                    const {uid} = res.json();
+                    setId(uid);
                     console.log(id);
                     
                 }else{

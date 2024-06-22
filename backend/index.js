@@ -162,7 +162,7 @@ app.get("/resetPass",async(req,res)=>{
   const email = req.header("email");
   try {
     const user = await data.findOne({email:email});
-    res.json({id:user._id});
+    res.json({uid:user._id});
   } catch (error) {
     console.log(error);
     res.status(500).send("Error geting id");
