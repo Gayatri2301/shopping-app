@@ -6,7 +6,7 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
-  const { login, user, token, data, setData, setUser, setToken } = useAuth();
+  const { login, user, token, data, setData, logout, setToken } = useAuth();
 
   useEffect(() => {
     validate();
@@ -14,11 +14,12 @@ const Login = () => {
       navigate('/Dashboard');
       console.log(user);
     }
-  }, [user, token, setData, setToken, setUser, navigate]);
+  }, [user, token, setData,login, setToken, navigate]);
 
   const validate = async () => {
     if (!token) {
-      return;
+      logout()
+      return false;
     }
     try{
     const res = await fetch('https://shopping-app-45uk.vercel.app/profile', {
@@ -29,13 +30,14 @@ const Login = () => {
     if (res.ok) {
       let d = await res.json();
       setData(d);
-      setUser(true);
-      localStorage.setItem('user', true);
-    } else {
+      login(true)
+        } else {
+      logout();
       setToken('');
     }
   }catch(error){
     console.log(error);
+    logout()
   }
   };
 

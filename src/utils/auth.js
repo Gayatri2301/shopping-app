@@ -3,7 +3,7 @@ const authContext = createContext();
 
 export const AuthProvider = ({ children }) => {
     const [token,setToken] = useState(localStorage.getItem("x-token")?localStorage.getItem("x-token"):"");
-    const [user, setUser] = useState(null); 
+    const [user, setUser] = useState(localStorage.getItem('user') ? localStorage.getItem('user'):null); 
     const [data, setData] = useState({}); 
     const [product,setProduct] = useState([]); 
     const [wishList,setWishList] = useState(localStorage.getItem('wishList')? JSON.parse(localStorage.getItem('wishList')) : []);
