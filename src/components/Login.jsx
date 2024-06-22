@@ -27,8 +27,7 @@ const Login = () => {
       });
       if (res.ok) {
         let token = await res.json();
-        setToken(token)
-        console.log(token);
+        setToken(token.token)
         localStorage.setItem('xtoken', token.token);
         login(true);
         navigate('/dashboard', { replace: true, state: { email } });

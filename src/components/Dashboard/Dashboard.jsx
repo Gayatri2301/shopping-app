@@ -6,8 +6,8 @@ import { useNavigate, Link, Router } from 'react-router-dom';
 import Hero from './Hero';
 
 const Dashboard = () => {
-  const { user,data } = useAuth();
   const navigate = useNavigate();
+  const { user } = useAuth();
 
   useEffect(() => {
     const handlePopState = (event) => {

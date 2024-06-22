@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../utils/auth';
 
 const Nav = () => {
-    const { logout, token, login, setData, data } = useAuth();
+    const { logout, token, login, setData, data,user } = useAuth();
     const nav = useNavigate();
 
     const validate = async () => {
@@ -17,13 +17,14 @@ const Nav = () => {
                 method: 'GET',
                 headers: {
                     'Accept':"*/*",
-                    'xtoken': token.token
+                    'xtoken': token
                 }
             });
             if (res.ok) {
                 const profileData = await res.json();
                 setData(profileData);
                 login(true);
+                // console.log('Profile data set:', profileData);
             } else {
                 console.log('Failed to validate token, logging out');
                 console.log(data)
