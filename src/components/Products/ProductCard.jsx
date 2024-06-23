@@ -38,15 +38,20 @@ const ProductCard = (props) => {
       <p>Price: ${props.price}</p>
       <p>Rating: {props.rating.rate}</p>
       
-      <div className='flex gap-2'>
-        <div>
-      <button
-        className='bg-white text-white p-2 mt-2 border border-red-500 rounded'
-        onClick={(event) => addWishlist(props.id, event)}
-      ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="h-8 fill-red-500 hover:fill-red-600 absolute">
+      <div className='flex gap-20'>
+      <div className="text-red-500 cursor-pointer hover:text-red-500">
+        {/* red heart         */}
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" className="mt-2 h-9 fill-red-500 hover:fill-red-600 absolute" onClick={(event) => addWishlist(props.id, event)}>
       <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
-    </svg><p className='text-black right-0'>Whishlist</p>
-      </button></div>
+    </svg>  
+    {/* red heart */}
+    {/* white heart */}
+    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-heart mt-2 h-9 fill-red-500 hover:fill-red-600 absolute" viewBox="0 0 16 16">
+  <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+</svg>
+{/* white heart */}
+      </div>
+     
       <button className='bg-[#106F97] text-white p-2 mt-2'
       onClick={(e)=>addCart(props.id,e)}
       >Add to Cart</button>
