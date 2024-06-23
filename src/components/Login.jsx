@@ -39,7 +39,7 @@ const Login = () => {
       }
     } catch (error) {
       console.log(error);
-      alert('check network connection');
+      alert('check network connection.');
     }
   };
 
