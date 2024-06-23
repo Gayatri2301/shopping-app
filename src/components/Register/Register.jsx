@@ -8,6 +8,7 @@ const Register = () => {
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [loading, setLoading] = useState(false);
+    const [icon,setIcon] = useState(true);
     const { user } = useAuth();
     const svgRef = useRef(null);
     const inputRef = useRef(null);
@@ -34,7 +35,6 @@ const Register = () => {
         setLoading(true);
 
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
         if (!emailRegex.test(email)) {
             alert("Enter valid Email");
             setLoading(false);
