@@ -25,7 +25,7 @@ const WishList = () => {
   return (
     <div className="mt-5">
       <p className='text-black text-2xl text-center font-bold'>My Whishlist</p>
-      <p className="text-xl ml-3 font-semibold ">Items : {wishList.length}</p>
+      <p className="text-xl ml-3 font-semibold "> Items : {wishList.length}</p>
       <ul>
         <div className="col-span-9 space-y-4">
           {wishList.map((item) => (

@@ -14,11 +14,14 @@ const Profile = () => {
 return (
   <>
   <div>
-      <section className=" justify-center">
+      <section className="justify-center">
+      <div className="md:w-1/2 px-16"></div>
         <div className="bg-gray-100 flex rounded-2xl shadow-lg p-5 items-center">
-          <div className="md:w-1/2 px-16"></div>
+          
           <img className='rounded-full' src='assets/profile.jpg' alt='profile'></img>
-          <button onClick={clicked} >Edit profile</button>
+          <div className=''>
+          <button className='bg-[#106F97] rounded' onClick={clicked} >Edit profile</button>
+          </div>
   </div></section></div>
   </>
 )
