@@ -37,7 +37,7 @@ const ProductList = () => {
   }
 
   const handleProductUpdate = (id) => {
-    fetchProductById(id)
+    setProducts([Ac[id-1]])
   };
 
 
