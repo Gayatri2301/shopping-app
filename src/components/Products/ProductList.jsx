@@ -1,17 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import ProductCard from './ProductCard';
-
+import { useAuth } from '../../utils/auth';
+import { Ac } from '../../data/Ac';
 const ProductList = () => {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState(Ac);
+  const { wishList, setWishList } = useAuth();
+  console.log(Ac);
 
-  useEffect(() => {
-    getProducts();
-  }, []);
+
+  // useEffect(() => {
+  //   getProducts();
+  // }, []);
 
   async function getProducts() {
     try {
       const res = await fetch(`https://fakestoreapi.com/products`);
       const list = await res.json();
+      console.log(list);
+      // for (let i = 0; i < 20; i++) {
+      //   list[i] = {...list[i],wishList:false,cart:false}        
+      // }
+      // console.log(list);
       setProducts(list);
     } catch (error) {
       console.error('Failed to fetch products:', error);
@@ -31,7 +40,8 @@ const ProductList = () => {
     fetchProductById(id)
   };
 
-  
+
+
   if (products.length === 0) {
     return (
       <section className="bg-[#106F97] min-h-screen flex items-center justify-center">
@@ -49,7 +59,7 @@ const ProductList = () => {
       {products.map(p => (
         <ProductCard
           {...p}
-          key={p.id} 
+          key={p.id}
           onUpdate={handleProductUpdate}
         />
       ))}
