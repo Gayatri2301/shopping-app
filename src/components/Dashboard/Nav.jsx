@@ -46,8 +46,8 @@ const Nav = () => {
     const home = () => nav('/Dashboard');
 
     return (
-        <div>
-            <nav className='p-5 bg-[#106F97] shadow md:flex md:items-center md:justify-between'>
+        <div className='w-full bg-red-500'>
+            <nav className='p-5 bg-[#106F97] shadow md:flex md:items-center md:justify-between w-full'>
                 <div>
                     <span className='text-white text-4xl font-[poppins] font-bold'>
                         <img className='mr-2 h-10 inline rounded-full' src='assets/logo.png' alt='logo' />
