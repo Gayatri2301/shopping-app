@@ -53,7 +53,7 @@ const ProductCard = (props) => {
 {/* white heart */}
       </div>
      
-      <button className='bg-[#106F97] text-white p-2 mt-2'
+      <button className='bg-[#106F97] text-white p-2 mt-2 rounded'
       onClick={(e)=>addCart(props.id,e)}
       >Add to Cart</button>
       </div>

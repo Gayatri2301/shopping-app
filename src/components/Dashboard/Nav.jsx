@@ -44,6 +44,7 @@ const Nav = () => {
     const Profile = () => nav('/profile');
     const Cart = () => nav('/cart');
     const home = () => nav('/Dashboard');
+    const category = () => nav('/Category');
 
     return (
         <div className='w-full bg-red-500'>
@@ -56,6 +57,7 @@ const Nav = () => {
                 </div>
                 <div className='md:flex md:items-center z-[-1] md:z-auto w-full left-0 md:w-auto ms:py-0 py-4 md:pl-0 pl-7'>
                     <input className="p-2 mt-2 rounded-xl border" type="text" placeholder='search' />
+                    <button className='mx-4 text-white my-6 md:my-0' onClick={category}>Category</button>
                     <button className='mx-4 text-white my-6 md:my-0' onClick={home}>Home</button>
                     <button className='mx-4 text-white my-6 md:my-0' onClick={wishList}>wishList</button>
                     <button className='mx-4 text-white my-6 md:my-0' onClick={Cart}>Cart</button>
