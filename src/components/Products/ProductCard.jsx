@@ -35,7 +35,7 @@ const ProductCard = (props) => {
     <div className='flex flex-col justify-between shadow-xl rounded-md p-5 w-[250px]' 
     onClick={() => props.onUpdate(props.id)} >
       <img className='h-52' src={props.image} alt={props.title} />
-      <p>{props.title}</p>
+      <p>{props.product}</p>
       <p>Price: ${props.price}</p>
       <p>Rating: {props.rating.rate}</p>
       

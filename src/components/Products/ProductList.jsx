@@ -2,29 +2,30 @@ import React, { useState, useEffect } from 'react';
 import ProductCard from './ProductCard';
 import { useAuth } from '../../utils/auth';
 import { Ac } from '../../data/Ac';
+import { Books } from '../../data/Books';
+import { Computer } from '../../data/Computers';
+import { Fridge } from '../../data/Fridge';
+import { Furniture } from '../../data/Furniture';
+import { MenWear } from '../../data/MenWear';
+import { Mobile } from '../../data/Mobiles';
+import { Speakers } from '../../data/speakers';
+import { TV } from '../../data/TV';
 const ProductList = () => {
-  const [products, setProducts] = useState(Ac);
+  const list = [...Ac,...Books,...Computer,...Fridge,...Furniture,...MenWear,...Mobile,...Speakers,...TV];
+  const [products, setProducts] = useState([]);
   const { wishList, setWishList } = useAuth();
-  console.log(Ac);
 
+  useEffect(() => {
+    getProducts();
+  }, []);
 
-  // useEffect(() => {
-  //   getProducts();
-  // }, []);
-
-  async function getProducts() {
-    try {
-      const res = await fetch(`https://fakestoreapi.com/products`);
-      const list = await res.json();
-      console.log(list);
-      // for (let i = 0; i < 20; i++) {
-      //   list[i] = {...list[i],wishList:false,cart:false}        
-      // }
-      // console.log(list);
-      setProducts(list);
-    } catch (error) {
-      console.error('Failed to fetch products:', error);
+  async function getProducts() {   
+    let temp = [];   
+    for (let i = 0; i < list.length; i++) {
+      let r = Math.floor(Math.random() * list.length);  
+      temp = [...temp,list[r]];    
     }
+    setProducts(temp);
   }
   async function fetchProductById(id) {
     try {
