@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { useAuth } from '../../utils/auth';
 
 const ProductCard = (props) => {
-  const {wishList,setWishList,carts,setCarts } = useAuth();
+  const {wishList,setWishList,carts,setCarts,data } = useAuth();
+  console.log(data);
   const [icon,setIcon] = useState(false);
   const addWishlist = (id,event)=>{
     event.stopPropagation();

@@ -10,7 +10,7 @@ const EditProfile = () => {
     }, [data]);
 
     const formatDate = (dateString) => {
-        if (!dateString) return ''; // Return empty string if dateString is undefined or null
+        if (!dateString) return ''; 
         let date = new Date(dateString);
         let month = '' + (date.getMonth() + 1);
         let day = '' + date.getDate();
@@ -29,8 +29,6 @@ const EditProfile = () => {
 
     const handleSave = async() => {
         const {email,firstName,lastName,phone,dob,gender,_id} = updatedDate;
-        console.log(_id);
-       
         try {
             const res = await fetch("https://shopping-app-45uk.vercel.app/update",{
                 method:"POST",
