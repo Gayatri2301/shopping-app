@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const wishlist = require('./wishlist');
 const data = mongoose.Schema({
     email: {
         type: String,
