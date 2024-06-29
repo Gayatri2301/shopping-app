@@ -4,7 +4,7 @@ export const Books = [
     {
         "id": "13",
         "image": `${BookList[0]}`,
-        "rating": { "rating": 3.9, "count": 500 },
+        "rating": { "rate": 3.9, "count": "500k" },
         "product": "Book",
         "title": "The Great Gatsby",
         "author": "F. Scott Fitzgerald",
@@ -15,7 +15,7 @@ export const Books = [
     {
         "id": "14",
         "image": `${BookList[1]}`,
-        "rating": { "rating": 4.8, "count": 620 },
+        "rating": { "rate": 4.8, "count": "620k" },
         "product": "Book",
         "title": "To Kill a Mockingbird",
         "author": "Harper Lee",
@@ -26,7 +26,7 @@ export const Books = [
     {
         "id": "15",
         "image": `${BookList[2]}`,
-        "rating": { "rating": 4.7, "count": 780 },
+        "rating": { "rate": 4.7, "count": "780k" },
         "product": "Book",
         "title": "1984",
         "author": "George Orwell",
@@ -37,7 +37,7 @@ export const Books = [
     {
         "id": "16",
         "image": `${BookList[3]}`,
-        "rating": { "rating": 4.6, "count": 500 },
+        "rating": { "rate": 4.6, "count": "500k" },
         "product": "Book",
         "title": "Pride and Prejudice",
         "author": "Jane Austen",
@@ -48,7 +48,7 @@ export const Books = [
     {
         "id": "17",
         "image": `${BookList[4]}`,
-        "rating": { "rating": 4.9, "count": 950 },
+        "rating": { "rate": 4.9, "count": "950k" },
         "product": "Book",
         "title": "The Hobbit",
         "author": "J.R.R. Tolkien",
@@ -59,7 +59,7 @@ export const Books = [
     {
         "id": "18",
         "image": `${BookList[5]}`,
-        "rating": { "rating": 4.8, "count": 1200 },
+        "rating": { "rate": 4.8, "count": "120k" },
         "product": "Book",
         "title": "Harry Potter and the Sorcerer's Stone",
         "author": "J.K. Rowling",
@@ -70,7 +70,7 @@ export const Books = [
     {
         "id": "19",
         "image": `${BookList[6]}`,
-        "rating": { "rating": 4.5, "count": 680 },
+        "rating": { "rate": 4.5, "count": "680k" },
         "product": "Book",
         "title": "The Catcher in the Rye",
         "author": "J.D. Salinger",
@@ -81,7 +81,7 @@ export const Books = [
     {
         "id": "20",
         "image": `${BookList[7]}`,
-        "rating": { "rating": 4.9, "count": 1000 },
+        "rating": { "rate": 4.9, "count": "100k" },
         "product": "Book",
         "title": "The Lord of the Rings",
         "author": "J.R.R. Tolkien",
@@ -92,7 +92,7 @@ export const Books = [
     {
         "id": "21",
         "image": `${BookList[8]}`,
-        "rating": { "rating": 4.7, "count": 800 },
+        "rating": { "rate": 4.7, "count": "800k" },
         "product": "Book",
         "title": "The Hunger Games",
         "author": "Suzanne Collins",
@@ -103,7 +103,7 @@ export const Books = [
     {
         "id": "22",
         "image": `${BookList[9]}`,
-        "rating": { "rating": 4.5, "count": 520 },
+        "rating": { "rate": 4.5, "count": "520k" },
         "product": "Book",
         "title": "Brave New World",
         "author": "Aldous Huxley",
@@ -114,7 +114,7 @@ export const Books = [
     {
         "id": "23",
         "image": `${BookList[10]}`,
-        "rating": { "rating": 4.8, "count": 900 },
+        "rating": { "rate": 4.8, "count": "900k" },
         "product": "Book",
         "title": "The Alchemist",
         "author": "Paulo Coelho",
@@ -125,7 +125,7 @@ export const Books = [
     {
         "id": "24",
         "image": `${BookList[11]}`,
-        "rating": { "rating": 4.4, "count": 640 },
+        "rating": { "rate": 4.4, "count": "640k" },
         "product": "Book",
         "title": "The Girl on the Train",
         "author": "Paula Hawkins",

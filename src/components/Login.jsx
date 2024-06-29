@@ -22,14 +22,14 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch('https://shopping-app-45uk.vercel.app/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password }),
+      const res = await fetch('https://shopping-app-45uk.vercel.app/login', { 
+        method: 'POST', 
+        headers: { 'Content-Type': 'application/json' }, 
+        body: JSON.stringify({ email, password }), 
       });
       if (res.ok) {
         let token = await res.json();
-        setToken(token.token)
+        setToken(token.token);
         localStorage.setItem('xtoken', token.token);
         login(true);
         navigate('/dashboard', { replace: true, state: { email } });

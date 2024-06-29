@@ -3,7 +3,7 @@ import { ComputerList } from "../utils/images";
      {
          "id": "25",
          "image": `${ComputerList[0]}`,
-         "rating": { "rating": 4.3, "count": 7000 },
+         "rating": { "rate": 4.3, "count": "700k" },
          "product": "Computer",
          "brand": "Dell",
          "model": "Inspiron 15",
@@ -14,7 +14,7 @@ import { ComputerList } from "../utils/images";
      {
          "id": "26",
          "image": `${ComputerList[1]}`,
-         "rating": { "rating": 4.5, "count": 4500 },
+         "rating": { "rate": 4.5, "count": "450k" },
          "product": "Computer",
          "brand": "HP",
          "model": "Pavilion 27",
@@ -25,7 +25,7 @@ import { ComputerList } from "../utils/images";
      {
          "id": "27",
          "image": `${ComputerList[2]}`,
-         "rating": { "rating": 4.8, "count": 8200 },
+         "rating": { "rate": 4.8, "count": "820k" },
          "product": "Computer",
          "brand": "Apple",
          "model": "MacBook Air",
@@ -36,7 +36,7 @@ import { ComputerList } from "../utils/images";
      {
          "id": "28",
          "image": `${ComputerList[3]}`,
-         "rating": { "rating": 4.2, "count": 3400 },
+         "rating": { "rate": 4.2, "count": "340k" },
          "product": "Computer",
          "brand": "Lenovo",
          "model": "IdeaPad Flex",
@@ -47,7 +47,7 @@ import { ComputerList } from "../utils/images";
      {
          "id": "29",
          "image": `${ComputerList[4]}`,
-         "rating": { "rating": 4.7, "count": 5100 },
+         "rating": { "rate": 4.7, "count": "510k" },
          "product": "Computer",
          "brand": "Acer",
          "model": "Predator Helios 300",
@@ -58,7 +58,7 @@ import { ComputerList } from "../utils/images";
      {
          "id": "30",
          "image": `${ComputerList[5]}`,
-         "rating": { "rating": 4.6, "count": 4300 },
+         "rating": { "rate": 4.6, "count": "430k" },
          "product": "Computer",
          "brand": "Microsoft",
          "model": "Surface Pro 7",
@@ -69,7 +69,7 @@ import { ComputerList } from "../utils/images";
      {
          "id": "31",
          "image": `${ComputerList[6]}`,
-         "rating": { "rating": 4.4, "count": 3700 },
+         "rating": { "rate": 4.4, "count": "370k" },
          "product": "Computer",
          "brand": "Asus",
          "model": "ZenBook 14",
@@ -80,7 +80,7 @@ import { ComputerList } from "../utils/images";
      {
          "id": "32",
          "image": `${ComputerList[7]}`,
-         "rating": { "rating": 4.9, "count": 6000 },
+         "rating": { "rate": 4.9, "count": "600k" },
          "product": "Computer",
          "brand": "Alienware",
          "model": "Aurora R10",
@@ -91,7 +91,7 @@ import { ComputerList } from "../utils/images";
      {
          "id": "33",
          "image": `${ComputerList[8]}`,
-         "rating": { "rating": 4.6, "count": 2900 },
+         "rating": { "rate": 4.6, "count": "290k" },
          "product": "Computer",
          "brand": "HP",
          "model": "EliteBook 840",
@@ -102,7 +102,7 @@ import { ComputerList } from "../utils/images";
      {
          "id": "34",
          "image": `${ComputerList[9]}`,
-         "rating": { "rating": 4.5, "count": 2500 },
+         "rating": { "rate": 4.5, "count": "250k" },
          "product": "Computer",
          "brand": "Lenovo",
          "model": "ThinkCentre M720",
@@ -113,7 +113,7 @@ import { ComputerList } from "../utils/images";
      {
          "id": "35",
          "image": `${ComputerList[10]}`,
-         "rating": { "rating": 4.8, "count": 7000 },
+         "rating": { "rate": 4.8, "count": "700k" },
          "product": "Computer",
          "brand": "Dell",
          "model": "XPS 13",
@@ -124,7 +124,7 @@ import { ComputerList } from "../utils/images";
      {
          "id": "36",
          "image": `${ComputerList[11]}`,
-         "rating": { "rating": 4.2, "count": 1700 },
+         "rating": { "rate": 4.2, "count": "170k" },
          "product": "Computer",
          "brand": "Acer",
          "model": "Chromebook 14",
@@ -135,7 +135,7 @@ import { ComputerList } from "../utils/images";
      {
          "id": "37",
          "image": `${ComputerList[12]}`,
-         "rating": { "rating": 4.6, "count": 5200 },
+         "rating": { "rate": 4.6, "count": "520k" },
          "product": "Computer",
          "brand": "Samsung",
          "model": "Galaxy Book Flex",
@@ -146,7 +146,7 @@ import { ComputerList } from "../utils/images";
      {
          "id": "38",
          "image": `${ComputerList[13]}`,
-         "rating": { "rating": 4.3, "count": 3000 },
+         "rating": { "rate": 4.3, "count": "300k" },
          "product": "Computer",
          "brand": "Razer",
          "model": "Blade 15",
@@ -157,7 +157,7 @@ import { ComputerList } from "../utils/images";
      {
          "id": "39",
          "image": `${ComputerList[14]}`,
-         "rating": { "rating": 4.7, "count": 4200 },
+         "rating": { "rate": 4.7, "count": "420k" },
          "product": "Computer",
          "brand": "MSI",
          "model": "GS66 Stealth",
@@ -168,7 +168,7 @@ import { ComputerList } from "../utils/images";
      {
          "id": "40",
          "image": `${ComputerList[15]}`,
-         "rating": { "rating": 4.5, "count": 3600 },
+         "rating": { "rate": 4.5, "count": "360k" },
          "product": "Computer",
          "brand": "Google",
          "model": "Pixelbook Go",
@@ -179,7 +179,7 @@ import { ComputerList } from "../utils/images";
      {
          "id": "41",
          "image": `${ComputerList[16]}`,
-         "rating": { "rating": 4.4, "count": 2800 },
+         "rating": { "rate": 4.4, "count": "280k" },
          "product": "Computer",
          "brand": "Huawei",
          "model": "MateBook X Pro",
@@ -190,7 +190,7 @@ import { ComputerList } from "../utils/images";
      {
          "id": "42",
          "image": `${ComputerList[17]}`,
-         "rating": { "rating": 4.8, "count": 5100 },
+         "rating": { "rate": 4.8, "count": "510k" },
          "product": "Computer",
          "brand": "LG",
          "model": "Gram 17",
@@ -201,7 +201,7 @@ import { ComputerList } from "../utils/images";
      {
          "id": "43",
          "image": `${ComputerList[18]}`,
-         "rating": { "rating": 4.5, "count": 3900 },
+         "rating": { "rate": 4.5, "count": "390k" },
          "product": "Computer",
          "brand": "Toshiba",
          "model": "Dynabook Tecra",
@@ -212,7 +212,7 @@ import { ComputerList } from "../utils/images";
      {
          "id": "44",
          "image": `${ComputerList[19]}`,
-         "rating": { "rating": 4.6, "count": 4300 },
+         "rating": { "rate": 4.6, "count": "430k" },
          "product": "Computer",
          "brand": "Sony",
          "model": "VAIO SX14",
@@ -223,7 +223,7 @@ import { ComputerList } from "../utils/images";
      {
          "id": "45",
          "image": `${ComputerList[20]}`,
-         "rating": { "rating": 4.7, "count": 3000 },
+         "rating": { "rate": 4.7, "count": "300k" },
          "product": "Computer",
          "brand": "Asus",
          "model": "ROG Zephyrus G14",

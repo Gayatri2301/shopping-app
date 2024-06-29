@@ -9,6 +9,7 @@ const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
 const data = require('./models/data');
 const authMiddleware = require('./middleware');
+const wishlist = require('./models/wishlist');
 app.use(cors());
 
 dotenv.config();
