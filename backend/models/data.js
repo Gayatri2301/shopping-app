@@ -33,8 +33,8 @@ const data = mongoose.Schema({
         type: String,
         required: true,
     },
-    wishlist:[],
-    carts:[]
+    wishlist:[{id:String}],
+    carts:[{id:String,quantity:String}]
 })
 
 module.exports = mongoose.model("userData", data)

@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../utils/auth";
 import { useEffect } from "react";
-import wishlist from "../../../backend/models/wishlist";
+
 
 const Register = () => {
     const [email, setEmail] = useState("");

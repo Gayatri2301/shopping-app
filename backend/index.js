@@ -9,7 +9,6 @@ const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
 const data = require('./models/data');
 const authMiddleware = require('./middleware');
-const wishlist = require('./models/wishlist');
 app.use(cors());
 
 dotenv.config();
@@ -171,11 +170,6 @@ app.get("/resetPass",async(req,res)=>{
 
 })
 
-app.post('/wishlist',async (req,res)=>{
-  const {email,wishlist} = req.body;
-  console.log(email);
-  console.log(wishlist);
-})
 
 
 module.exports = app;
