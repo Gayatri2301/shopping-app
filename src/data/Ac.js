@@ -3,7 +3,7 @@ export const Ac = [
   {
       "id": "1",
       "image": `${AcList[0]}`,
-      "rating": { "rating": 3.5, "count": 500 },
+      "rating": { "rating": 3.5, "count": "500" },
       "product": "Air Conditioner",
       "company": "LG",
       "model": "CoolTech 5000",
@@ -14,7 +14,7 @@ export const Ac = [
   {
       "id": "2",
       "image": `${AcList[1]}`,
-      "rating": { "rating": 4.0, "count": 250 },
+      "rating": { "rating": 4.0, "count": "250" },
       "product": "AC Unit",
       "company": "Daikin",
       "model": "ClimateMaster Pro",
@@ -25,7 +25,7 @@ export const Ac = [
   {
       "id": "3",
       "image": `${AcList[2]}`,
-      "rating": { "rating": 4.5, "count": 300 },
+      "rating": { "rating": 4.5, "count": "300" },
       "product": "Cooling System",
       "company": "Carrier",
       "model": "Arctic Breeze 300",
@@ -36,7 +36,7 @@ export const Ac = [
   {
       "id": "4",
       "image": `${AcList[3]}`,
-      "rating": { "rating": 3.8, "count": 150 },
+      "rating": { "rating": 3.8, "count": "150" },
       "product": "Air Cooler",
       "company": "Honeywell",
       "model": "FrostFlow XL",
@@ -47,7 +47,7 @@ export const Ac = [
   {
       "id": "5",
       "image": `${AcList[4]}`,
-      "rating": { "rating": 4.2, "count": 200 },
+      "rating": { "rating": 4.2, "count": "200" },
       "product": "Window AC",
       "company": "Whirlpool",
       "model": "ChillGuard 800",
@@ -58,7 +58,7 @@ export const Ac = [
   {
       "id": "6",
       "image": `${AcList[5]}`,
-      "rating": { "rating": 4.7, "count": 350 },
+      "rating": { "rating": 4.7, "count": "350" },
       "product": "Smart AC",
       "company": "Nest",
       "model": "EcoCool Smart+",
@@ -69,7 +69,7 @@ export const Ac = [
   {
       "id": "7",
       "image": `${AcList[6]}`,
-      "rating": { "rating": 4.6, "count": 400 },
+      "rating": { "rating": 4.6, "count": "400" },
       "product": "Inverter AC",
       "company": "Mitsubishi",
       "model": "SilentComfort 1200i",
@@ -80,7 +80,7 @@ export const Ac = [
   {
       "id": "8",
       "image": `${AcList[7]}`,
-      "rating": { "rating": 4.1, "count": 180 },
+      "rating": { "rating": 4.1, "count": "180" },
       "product": "Portable AC",
       "company": "Frigidaire",
       "model": "EZCool Portable 400",
@@ -91,7 +91,7 @@ export const Ac = [
   {
       "id": "9",
       "image": `${AcList[8]}`,
-      "rating": { "rating": 4.8, "count": 220 },
+      "rating": { "rating": 4.8, "count": "220" },
       "product": "Ducted AC",
       "company": "Lennox",
       "model": "PureAir Ducted 6000",
@@ -102,7 +102,7 @@ export const Ac = [
   {
       "id": "10",
       "image": `${AcList[9]}`,
-      "rating": { "rating": 3.9, "count": 210 },
+      "rating": { "rating": 3.9, "count": "210" },
       "product": "Wall-Mount AC",
       "company": "Panasonic",
       "model": "WallMaster Pro 1800",
@@ -113,7 +113,7 @@ export const Ac = [
   {
       "id": "11",
       "image": `${AcList[10]}`,
-      "rating": { "rating": 4.3, "count": 270 },
+      "rating": { "rating": 4.3, "count": "270" },
       "product": "Split AC",
       "company": "Haier",
       "model": "CoolWave Split 220",
@@ -124,7 +124,7 @@ export const Ac = [
   {
       "id": "12",
       "image": `${AcList[11]}`,
-      "rating": { "rating": 4.5, "count": 310 },
+      "rating": { "rating": 4.5, "count": "310" },
       "product": "Central AC",
       "company": "Trane",
       "model": "ClimateCentral 5000",
