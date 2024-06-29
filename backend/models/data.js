@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const wishlist = require('./wishlist');
 const data = mongoose.Schema({
     email: {
         type: String,
@@ -32,6 +33,8 @@ const data = mongoose.Schema({
         type: String,
         required: true,
     },
+    wishlist:[],
+    carts:[]
 })
 
 module.exports = mongoose.model("userData", data)

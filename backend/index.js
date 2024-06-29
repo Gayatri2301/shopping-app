@@ -88,7 +88,7 @@ app.post('/verify', (req, res) => {
 
 app.post('/register', async (req, res) => {
   try {
-    const { email, firstName, lastName, phone, password, dob, gender, address } = req.body;
+    const { email, firstName, lastName, phone, password, dob, gender, address,wishlist,carts } = req.body;
     const exist = await data.findOne({ email });
     if (exist) {
       return res.status(400).send("User already exists");
@@ -97,7 +97,7 @@ app.post('/register', async (req, res) => {
     
 
     let newUser = new data({
-      email, password, firstName, lastName, phone, dob:new Date(dob), gender, address
+      email, password, firstName, lastName, phone, dob:new Date(dob), gender, address,wishlist,carts
     });
 
     await newUser.save();
@@ -169,6 +169,12 @@ app.get("/resetPass",async(req,res)=>{
     res.status(500).send("Error geting id");
   }
 
+})
+
+app.post('/wishlist',async (req,res)=>{
+  const {email,wishlist} = req.body;
+  console.log(email);
+  console.log(wishlist);
 })
 
 
