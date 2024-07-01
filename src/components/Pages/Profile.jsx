@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 const Profile = () => {
   const {data} = useAuth();
   const nav = useNavigate();
-  console.log(data);
+  
   const clicked = ()=>{
     nav('/editProfile');
   }

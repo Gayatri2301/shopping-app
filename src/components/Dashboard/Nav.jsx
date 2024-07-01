@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../utils/auth';
 
 const Nav = () => {
-    const { logout, token, login, setData, data,user } = useAuth();
+    const { logout, token, login, setData, data,user,setWishList,setCarts } = useAuth();
     const nav = useNavigate();
 
     const validate = async () => {
@@ -23,8 +23,9 @@ const Nav = () => {
             if (res.ok) {
                 const profileData = await res.json();
                 setData(profileData);
+                setWishList(profileData.wishlist);
+                setCarts(profileData.carts)
                 login(true);
-                console.log('Profile data set:', profileData);
             } else {
                 console.log('Failed to validate token, logging out');
                 console.log(data)
@@ -34,6 +35,8 @@ const Nav = () => {
             console.error('Error during validation:', error);
             logout();
         }
+        // setWishList([...data.wishlist]);
+       
     };
 
     useEffect(() => {

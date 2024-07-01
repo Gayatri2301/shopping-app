@@ -149,7 +149,7 @@ const updatedUser = await data.findByIdAndUpdate(_id, {...req.body}, {
     new: true, 
     runValidators: true,
   });
-  res.status(200).send("Sucessfully updated")
+  res.status(200).send("Sucessfully updated");
   console.log('Updated User:', updatedUser);
 } catch (error) {
   console.error('Error updating user:', error);

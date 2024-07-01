@@ -2,13 +2,28 @@ import React from "react";
 import { useAuth } from "../../utils/auth";
 
 const WishList = () => {
-  const { wishList, setWishList, carts, setCarts } = useAuth();
+  const { wishList, setWishList, carts, setCarts,data } = useAuth();
+  const {_id} = data;
 
-  const removeWishList = (id) => {
+  const removeWishList = async (id) => {
     let items = [...wishList];
     items = items.filter((item) => item.id !== id);
+    try {
+      const res = await fetch("https://shopping-app-45uk.vercel.app/update",{
+        method:"POST",
+        headers: {
+          'Content-Type': 'application/json',
+      },
+      body:JSON.stringify({wishlist:items,_id:_id})
+      })
+      if(res.ok){
+        console.log("removed");
+      }
+    } catch (error) {
+      console.log(error);
+    }
     setWishList(items);
-    localStorage.setItem("wishList", JSON.stringify(items));
+
   };
   const addCart = async (item, event) => {
     event.stopPropagation();
@@ -18,9 +33,24 @@ const WishList = () => {
       }
     }
     let temp = [...carts, item];
-    await setCarts(temp);
-    localStorage.setItem("carts", JSON.stringify(temp));
+    try {
+      const res = await fetch("https://shopping-app-45uk.vercel.app/update",{
+        method:"POST",
+        headers: {
+          'Content-Type': 'application/json',
+      },
+      body:JSON.stringify({carts:temp,_id:_id})
+      })
+      if(res.ok){
+        console.log("added to cart");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+    setCarts(temp);
   };
+  
+ 
 
   return (
     <div className="mt-5">
