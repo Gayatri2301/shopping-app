@@ -173,18 +173,18 @@ const Watch11 = `${process.env.PUBLIC_URL}/assets/hero/assets/Watch/11.jpg`;
 const Watch12 = `${process.env.PUBLIC_URL}/assets/hero/assets/Watch/12.jpg`;
 
 
-const Women1 = `${process.env.PUBLIC_URL}/assets/hero/assets/Women/1.jpg`;
-const Women2 = `${process.env.PUBLIC_URL}/assets/hero/assets/Women/2.jpg`;
-const Women3 = `${process.env.PUBLIC_URL}/assets/hero/assets/Women/3.jpg`;
-const Women4 = `${process.env.PUBLIC_URL}/assets/hero/assets/Women/4.jpg`;
-const Women5 = `${process.env.PUBLIC_URL}/assets/hero/assets/Women/5.jpg`;
-const Women6 = `${process.env.PUBLIC_URL}/assets/hero/assets/Women/6.jpg`;
-const Women7 = `${process.env.PUBLIC_URL}/assets/hero/assets/Women/7.jpg`;
-const Women8 = `${process.env.PUBLIC_URL}/assets/hero/assets/Women/8.jpg`;
-const Women9 = `${process.env.PUBLIC_URL}/assets/hero/assets/Women/9.jpg`;
-const Women10 = `${process.env.PUBLIC_URL}/assets/hero/assets/Women/10.jpg`;
-const Women11 = `${process.env.PUBLIC_URL}/assets/hero/assets/Women/11.jpg`;
-const Women12 = `${process.env.PUBLIC_URL}/assets/hero/assets/Women/12.jpg`;
+const Women1 = `${process.env.PUBLIC_URL}/assets/hero/assets/Woman/1.jpg`;
+const Women2 = `${process.env.PUBLIC_URL}/assets/hero/assets/Woman/2.jpg`;
+const Women3 = `${process.env.PUBLIC_URL}/assets/hero/assets/Woman/3.jpg`;
+const Women4 = `${process.env.PUBLIC_URL}/assets/hero/assets/Woman/4.jpg`;
+const Women5 = `${process.env.PUBLIC_URL}/assets/hero/assets/Woman/5.jpg`;
+const Women6 = `${process.env.PUBLIC_URL}/assets/hero/assets/Woman/6.jpg`;
+const Women7 = `${process.env.PUBLIC_URL}/assets/hero/assets/Woman/7.jpg`;
+const Women8 = `${process.env.PUBLIC_URL}/assets/hero/assets/Woman/8.jpg`;
+const Women9 = `${process.env.PUBLIC_URL}/assets/hero/assets/Woman/9.jpg`;
+const Women10 = `${process.env.PUBLIC_URL}/assets/hero/assets/Woman/10.jpg`;
+const Women11 = `${process.env.PUBLIC_URL}/assets/hero/assets/Woman/11.jpg`;
+const Women12 = `${process.env.PUBLIC_URL}/assets/hero/assets/Woman/12.jpg`;
 
 
 

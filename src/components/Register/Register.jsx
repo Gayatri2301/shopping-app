@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../utils/auth";
 import { useEffect } from "react";
 
+
 const Register = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -21,7 +22,9 @@ const Register = () => {
         phone: "",
         dob: "",
         gender: "",
-        address: ""
+        address: "",
+        wishlist:[],
+        carts:[]
     });
 
     const nav = useNavigate();

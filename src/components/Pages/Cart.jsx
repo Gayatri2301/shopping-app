@@ -4,36 +4,40 @@ import { useAuth } from '../../utils/auth'
 
 
 const Cart = () => {
-  const { carts, setCarts, wishList, setWishList } = useAuth();
+  const { carts, setCarts, wishList, setWishList,data } = useAuth();
+  const {_id} = data;
   const [sum, setSum ] = useState([0]);
-const Total = () => {
+const total = () => {
   let s = 0
   for(let i of carts){
-    s += i.price;
-  
+    s += parseInt(i.price);
   }
   setSum(s);
 }
-  const removeCart = (id) => {
+  const removeCart = async (id) => {
     let items = [...carts];
     items = items.filter((item) => item.id !== id);
-    setCarts(items);
-    localStorage.setItem('carts', JSON.stringify(items));
-  }
-  const addWishlist = (item, event) => {
-    event.stopPropagation();
-    for (let i of wishList) {
-      if (i.id === item.id) {
-        return;
+    try {
+      const res = await fetch("https://shopping-app-45uk.vercel.app/update",{
+        method:"POST",
+        headers: {
+          'Content-Type': 'application/json',
+      },
+      body:JSON.stringify({carts:items,_id:_id})
+      })
+      if(res.ok){
+        console.log("deleted");
       }
+    } catch (error) {
+      console.log(error);
+      return
     }
-    let temp = [...wishList, item];
-    setWishList(temp);
-    localStorage.setItem('wishList', JSON.stringify(temp));
+    setCarts(items);
   }
   useEffect(() => {
-    Total();
-  },[])
+    total();
+  },[carts])
+  
 
   return (
     <div className="mt-5">

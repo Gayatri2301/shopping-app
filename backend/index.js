@@ -87,7 +87,7 @@ app.post('/verify', (req, res) => {
 
 app.post('/register', async (req, res) => {
   try {
-    const { email, firstName, lastName, phone, password, dob, gender, address } = req.body;
+    const { email, firstName, lastName, phone, password, dob, gender, address,wishlist,carts } = req.body;
     const exist = await data.findOne({ email });
     if (exist) {
       return res.status(400).send("User already exists");
@@ -96,7 +96,7 @@ app.post('/register', async (req, res) => {
     
 
     let newUser = new data({
-      email, password, firstName, lastName, phone, dob:new Date(dob), gender, address
+      email, password, firstName, lastName, phone, dob:new Date(dob), gender, address,wishlist,carts
     });
 
     await newUser.save();
@@ -143,14 +143,13 @@ app.get('/profile', authMiddleware, async (req, res) => {
 });
 
 app.post('/update',async(req,res)=>{
-  const {_id} = req.body
-  console.log(req.body);
+  const {_id} = req.body;
   try{
 const updatedUser = await data.findByIdAndUpdate(_id, {...req.body}, {
     new: true, 
     runValidators: true,
   });
-  res.status(200).send("Sucessfully updated")
+  res.status(200).send("Sucessfully updated");
   console.log('Updated User:', updatedUser);
 } catch (error) {
   console.error('Error updating user:', error);
@@ -169,6 +168,7 @@ app.get("/resetPass",async(req,res)=>{
   }
 
 })
+
 
 
 module.exports = app;
