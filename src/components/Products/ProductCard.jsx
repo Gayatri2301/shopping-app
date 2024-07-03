@@ -22,7 +22,7 @@ const ProductCard = (props) => {
       body:JSON.stringify({wishlist:[...wishList,p],_id:_id})
       })
       if(res.ok){
-        alert("sucess");
+        console.log("success");
         setIcon(true);
       }
     } catch (error) {
@@ -47,7 +47,7 @@ const ProductCard = (props) => {
       body:JSON.stringify({carts:[...carts,props],_id:_id})
       })
       if(res.ok){
-        alert("sucess");
+        console.log("Success");
       }
     } catch (error) {
       console.log(error);
