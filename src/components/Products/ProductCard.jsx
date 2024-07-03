@@ -30,7 +30,6 @@ const ProductCard = (props) => {
       return
       }
     }
-    console.log(p);
     try {
       const res = await fetch("https://shopping-app-45uk.vercel.app/update",{
         method:"POST",
@@ -48,11 +47,28 @@ const ProductCard = (props) => {
     let temp = [...wishList,props]
     setWishList(temp)
   }  
-  const addCart = async (id,event)=>{
+  const addCart = async (event)=>{
     event.stopPropagation();
-    for(let i of carts){
-      if(i.id === id){
-        return;
+    for(let i=0;i<carts.length;i++){
+      if(carts[i].id === props.id){
+        let temp = [...carts];
+        temp.splice(i,1);
+        try {
+          const res = await fetch("https://shopping-app-45uk.vercel.app/update",{
+            method:"POST",
+            headers: {
+              'Content-Type': 'application/json',
+          },
+          body:JSON.stringify({carts:[...temp],_id:_id})
+          })
+          if(res.ok){
+            setCarts(temp);
+            setCartItem(false);
+          }
+        } catch (error) {
+          console.log(error);
+        }
+      return
       }
     }
     try {
@@ -110,8 +126,8 @@ const ProductCard = (props) => {
 {/* white heart */}
       </div>
      
-      <button className='bg-[#106F97] text-white p-2 mt-2 rounded'
-      onClick={(e)=>addCart(props.id,e)}
+      <button className={`text-white p-2 mt-2 rounded ${cartItem ? 'bg-green-500' : 'bg-[#106F97]'}`}
+      onClick={(e)=>addCart(e)}
       >{cartItem? "CartItem" : "Add to Cart"}</button>
       </div>
     </div>
