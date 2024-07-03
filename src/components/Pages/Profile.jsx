@@ -11,7 +11,7 @@ const Profile = () => {
   }
   
   const formatDate = (dateString) => {
-    if (!dateString) return ''; // Return empty string if dateString is undefined or null
+    if (!dateString) return '';
     let date = new Date(dateString);
     let month = '' + (date.getMonth() + 1);
     let day = '' + date.getDate();
