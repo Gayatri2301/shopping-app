@@ -47,7 +47,7 @@ const Nav = () => {
     const Profile = () => nav('/profile');
     const Cart = () => nav('/cart');
     const home = () => nav('/Dashboard');
-    const category = () => nav('/Category');
+    const category = () => nav('/category');
 
     return (
         <div className='w-full bg-red-500'>

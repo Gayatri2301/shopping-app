@@ -11,10 +11,11 @@ import { Mobile } from '../../data/Mobiles';
 import { Speakers } from '../../data/speakers';
 import { TV } from '../../data/TV';
 import { WomenWear } from '../../data/WomenWear';
+import { Watch } from '../../data/Watch';
 const ProductList = () => {
-  const list = [...Ac,...Books,...Computer,...Fridge,...WomenWear,...Furniture,...MenWear,...Mobile,...Speakers,...TV];
+  const list = [...Ac,...Books,...Computer,...Fridge,...WomenWear,...Furniture,...MenWear,...Mobile,...Speakers,...TV,...Watch];
   const [products, setProducts] = useState([]);
-  const { wishList, setWishList } = useAuth();
+  
 
   useEffect(() => {
     getProducts();

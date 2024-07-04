@@ -1,7 +1,6 @@
 import { WatchList } from "../utils/images"
 
 export const Watch = [
-  [
     {
       "id": "138",
       "image": `${WatchList[0]}`,
@@ -147,4 +146,4 @@ export const Watch = [
       "description": "A luxury skeleton watch with a see-through design. Release Date: 2024-11-20"
     }
   ]
-]
+
