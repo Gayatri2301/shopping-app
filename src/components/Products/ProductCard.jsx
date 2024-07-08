@@ -104,7 +104,6 @@ const ProductCard = (props) => {
   useEffect(()=>{
     mark();
   })
-  console.log(props)
 
   return (
     <div className='flex flex-col justify-between shadow-xl rounded-md p-5 w-[250px]' >

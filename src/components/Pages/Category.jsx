@@ -34,8 +34,7 @@ const Category = () => {
     console.log(p)
     setList(values[p]);
   }
-  console.log(list)
-
+  console.log(list);
   return (
     <div className="flex flex-wrap justify-center gap-4 p-4">
       {categories.map((category) => (

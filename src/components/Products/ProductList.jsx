@@ -15,7 +15,20 @@ import { Watch } from '../../data/Watch';
 const ProductList = () => {
   const list = [...Ac,...Books,...Computer,...Fridge,...WomenWear,...Furniture,...MenWear,...Mobile,...Speakers,...TV,...Watch];
   const [products, setProducts] = useState([]);
+  const {search,setSearch} = useAuth()
   
+  useEffect(() => { 
+    if (search.length === 0) {
+      return
+    }
+    setProducts(
+        list.filter(product =>
+            product.product.toLowerCase().includes(search.toLowerCase())
+        )
+    );
+    console.log(products);
+}, [search]);
+
 
   useEffect(() => {
     getProducts();
@@ -28,15 +41,6 @@ const ProductList = () => {
       temp = [...temp,list[r]];    
     }
     setProducts(temp);
-  }
-  async function fetchProductById(id) {
-    try {
-      const res = await fetch(`https://fakestoreapi.com/products/${id}`);
-      const item = await res.json();
-      setProducts([item]);
-    } catch (error) {
-      console.error('Failed to fetch product:', error);
-    }
   }
 
   const handleProductUpdate = (id) => {
