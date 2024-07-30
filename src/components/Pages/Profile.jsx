@@ -42,6 +42,9 @@ const Profile = () => {
             </div>
           </div>
         </section>
+        <div>
+          <h1>Your Orders</h1>
+        </div>
       </div>
     </>
   );

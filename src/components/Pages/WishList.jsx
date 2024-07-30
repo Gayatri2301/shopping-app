@@ -49,8 +49,6 @@ const WishList = () => {
     }
     setCarts(temp);
   };
-  
- 
 
   return (
     <div className="mt-5">

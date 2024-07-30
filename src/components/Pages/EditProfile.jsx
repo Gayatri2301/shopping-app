@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../utils/auth';
+import { useNavigate } from 'react-router-dom';
 
 const EditProfile = () => {
     const { data, setData } = useAuth();
     const [updatedDate, setUpdatedDate] = useState({ ...data });
+    const nav = useNavigate();
 
     useEffect(() => {
         setUpdatedDate({ ...data });
@@ -42,6 +44,7 @@ const EditProfile = () => {
             console.log(res.ok)
             if(res.ok){
                 alert("Sucessfully updated");
+                nav("/profile");
             }else{
                 alert("Failed to update");
             }

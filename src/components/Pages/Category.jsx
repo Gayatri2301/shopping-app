@@ -36,11 +36,11 @@ const Category = () => {
   }
   console.log(list);
   return (
-    <div className="flex flex-wrap justify-center gap-4 p-4">
+    <div className="flex flex-wrap justify-center gap-4 p-5">
       {categories.map((category) => (
         <button
           key={category}
-          className="bg-white p-4 shadow-lg border rounded-lg text-center w-32 h-32 hover:bg-red-300 hover:scale-105 transition-transform duration-300"
+          className="bg-white p-4 shadow-lg border rounded-lg text-center w-40 h-40 hover:bg-red-300 hover:scale-105 transition-transform duration-300"
           onClick={()=>clicked(category)}
         >
           {category}

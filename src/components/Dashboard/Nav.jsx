@@ -8,7 +8,7 @@ const Nav = () => {
 
     const validate = async () => {
         if (!token) {
-            logout();
+            logout();  
             console.log("Token not found, logging out");
             return false;
         }
