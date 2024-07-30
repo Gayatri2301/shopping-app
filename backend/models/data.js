@@ -59,6 +59,20 @@ const data = mongoose.Schema({
         price: String,
         category: String,
         description: String,
+    }],
+    orders:[{
+        id: String,
+        image: String,
+        rating: {
+            rate: Number,
+            count: String
+        },
+        product: String,
+        company: String,
+        model: String,
+        price: String,
+        category: String,
+        description: String,
     }]
 })
 

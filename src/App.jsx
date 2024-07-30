@@ -17,6 +17,7 @@ import Cart from './components/Pages/Cart';
 import WishList from './components/Pages/WishList';
 import EditProfile from './components/Pages/EditProfile';
 import Category from './components/Pages/Category';
+import Order from './components/Pages/Order';
 
 const App = () => {
   const { user } = useAuth();
@@ -37,6 +38,7 @@ const App = () => {
           <Route path='/cart' element={<Cart />} />
           <Route path='/wishList' element={<WishList />} />
           <Route path='/editProfile' element={<EditProfile />} />
+          <Route path='/order' element={<Order />} />
           <Route path='/category' element={<Category />} />
         </Route>
         <Route element={<OtpLayout />}>
